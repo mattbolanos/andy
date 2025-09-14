@@ -1,8 +1,12 @@
 import Image from "next/image";
 import { Suspense } from "react";
 import { HeroButton } from "@/components/home/hero-button";
-import { RecentTracks } from "@/components/home/recent-tracks";
+import {
+  RecentTracks,
+  RecentTracksSkeleton,
+} from "@/components/home/recent-tracks";
 import { RecentTracksSchema } from "@/lib/schemas";
+import Andy from "@/public/andy.jpeg";
 
 async function RecentTracksWrapper() {
   const res = await fetch(
@@ -12,7 +16,7 @@ async function RecentTracksWrapper() {
         user: "nofinersteiner",
         api_key: process.env.LASTFM_API_KEY ?? "",
         format: "json",
-        limit: "4",
+        limit: "3",
       }),
   ).then((res) => res.json());
   const tracks = RecentTracksSchema.safeParse(res);
@@ -45,17 +49,16 @@ export default function Home() {
         <p>He loves his morning bagel.</p>
         <HeroButton />
       </div>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-stretch">
         <Image
-          src="/andy.jpeg"
+          src={Andy}
           alt="Andy Steiner"
-          width={550}
-          height={550}
-          quality={100}
-          className="rounded-base border-border shadow-shadow border-2 object-cover"
+          className="rounded-base border-border shadow-shadow aspect-video h-full w-full border-2 object-cover object-[75%_center]"
         />
-        <Suspense>
-          <RecentTracksWrapper />
+        <Suspense fallback={<RecentTracksSkeleton />}>
+          <div className="h-full">
+            <RecentTracksWrapper />
+          </div>
         </Suspense>
       </div>
     </div>

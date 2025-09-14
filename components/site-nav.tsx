@@ -59,7 +59,7 @@ export default function SiteNav() {
                 <NavigationMenuLink
                   href={link.href}
                   className={cn(
-                    "text-muted-foreground hover:text-main flex items-center gap-1 py-1.5 font-medium",
+                    "hover:text-main flex items-center gap-1 py-1.5 font-medium",
                     link.blank && "group",
                   )}
                   blank={link.blank}
