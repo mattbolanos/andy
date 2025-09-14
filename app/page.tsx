@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
+import { Contact } from "@/components/contact";
 import { HeroButton } from "@/components/home/hero-button";
 import { QuickLinks } from "@/components/home/quick-links";
 import {
@@ -35,7 +36,7 @@ async function RecentTracksWrapper() {
 
 export default function Home() {
   return (
-    <div className="space-y-12">
+    <div className="space-y-10 md:space-y-16">
       {/* hero */}
       <div className="space-y-6">
         <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
@@ -78,26 +79,6 @@ export default function Home() {
           <QuickLinks />
         </div>
         <RecentWork />
-      </div>
-      {/* contact */}
-      <div className="space-y-4">
-        <h2 className="text-3xl font-bold tracking-tight">Contact</h2>
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-4">
-          {socialLinks.map((link) => (
-            <Link href={link.href} key={link.href} target="_blank" prefetch>
-              <Button variant="neutral" className="w-full gap-1">
-                <Image
-                  src={`/${link.label.toLowerCase()}.svg`}
-                  alt={link.label}
-                  width={24}
-                  height={24}
-                  className="size-4 md:size-6"
-                />
-                {link.label}
-              </Button>
-            </Link>
-          ))}
-        </div>
       </div>
     </div>
   );

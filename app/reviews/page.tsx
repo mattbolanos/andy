@@ -6,5 +6,11 @@ export const metadata: Metadata = {
 };
 
 export default function Reviews() {
-  return <div>Reviews</div>;
+  return (
+    <div className="space-y-16">
+      <div className="space-y-4">
+        <h2 className="text-3xl font-bold tracking-tight">Reviews</h2>
+      </div>
+    </div>
+  );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Contact } from "@/components/contact";
 import SiteNav from "@/components/site-nav";
 
 const geistSans = Geist({
@@ -29,9 +30,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SiteNav />
-        <main className="mx-auto w-full max-w-screen-lg px-4 py-12 md:px-6 lg:px-8">
-          {children}
-        </main>
+        <div className="mx-auto w-full max-w-screen-lg space-y-10 px-4 py-12 md:space-y-16 md:px-6 lg:px-8">
+          <main>{children}</main>
+          <Contact />
+        </div>
       </body>
     </html>
   );
