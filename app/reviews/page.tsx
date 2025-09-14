@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AlbumReviews } from "@/components/album-reviews";
 
 export const metadata: Metadata = {
   title: "Reviews | Andy Steiner",
@@ -7,10 +8,11 @@ export const metadata: Metadata = {
 
 export default function Reviews() {
   return (
-    <div className="space-y-16">
-      <div className="space-y-4">
-        <h2 className="text-3xl font-bold tracking-tight">Reviews</h2>
-      </div>
+    <div className="space-y-6">
+      <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+        Album Reviews
+      </h2>
+      <AlbumReviews />
     </div>
   );
 }
