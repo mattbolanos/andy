@@ -3,10 +3,9 @@
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";
 import { ChevronDown } from "lucide-react";
-
-import { cn } from "@/lib/utils";
 import type { Route } from "next";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 function NavigationMenu({
   className,
@@ -21,7 +20,7 @@ function NavigationMenu({
       data-slot="navigation-menu"
       data-viewport={viewport}
       className={cn(
-        "rounded-base font-heading border-border bg-main relative z-10 flex max-w-max flex-1 items-center justify-center border-2 p-1",
+        "font-heading relative z-10 flex max-w-max flex-1 items-center justify-center p-1",
         className,
       )}
       {...props}
@@ -40,7 +39,7 @@ function NavigationMenuList({
     <NavigationMenuPrimitive.List
       data-slot="navigation-menu-list"
       className={cn(
-        "group font-heading flex flex-1 list-none items-center justify-center space-x-1",
+        "font-heading flex flex-1 list-none items-center justify-center space-x-1",
         className,
       )}
       {...props}
