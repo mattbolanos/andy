@@ -29,7 +29,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SiteNav />
-        {children}
+        <main className="mx-auto w-full max-w-screen-lg px-4 py-12 md:px-6 lg:px-8">
+          {children}
+        </main>
       </body>
     </html>
   );

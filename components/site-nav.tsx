@@ -47,33 +47,32 @@ export default function SiteNav() {
         <div className="flex items-center gap-2">
           {/* Main nav */}
           <div className="flex items-center gap-12">
-            <Link href="/" className="hover:text-main text-lg font-medium">
+            <Link href="/" className="hover:text-main text-lg font-semibold">
               Andy Steiner
             </Link>
-            <NavigationMenu className="max-md:hidden">
-              <NavigationMenuList className="gap-2">
-                {navigationLinks.map((link) => (
-                  <NavigationMenuItem key={link.href}>
-                    <NavigationMenuLink
-                      href={link.href}
-                      className={cn(
-                        "text-muted-foreground hover:text-main flex items-center gap-1 py-1.5 font-medium",
-                        link.blank && "group",
-                      )}
-                      blank={link.blank}
-                    >
-                      {link.label}
-                      {link.blank && (
-                        <ExternalLinkIcon className="text-muted-foreground size-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      )}
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
           </div>
         </div>
-
+        <NavigationMenu className="max-md:hidden">
+          <NavigationMenuList className="gap-2">
+            {navigationLinks.map((link) => (
+              <NavigationMenuItem key={link.href}>
+                <NavigationMenuLink
+                  href={link.href}
+                  className={cn(
+                    "text-muted-foreground hover:text-main flex items-center gap-1 py-1.5 font-medium",
+                    link.blank && "group",
+                  )}
+                  blank={link.blank}
+                >
+                  {link.label}
+                  {link.blank && (
+                    <ExternalLinkIcon className="text-muted-foreground size-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  )}
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
         <MobileMenu navigationLinks={navigationLinks} />
       </div>
     </header>
