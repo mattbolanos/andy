@@ -8,6 +8,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "lastfm.freetls.fastly.net",
       },
+      {
+        protocol: "https",
+        hostname: "static.wixstatic.com",
+      },
+      {
+        protocol: "https",
+        hostname: "andysteiner2.wixsite.com",
+      },
     ],
   },
 };
