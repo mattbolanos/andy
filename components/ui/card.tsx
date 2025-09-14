@@ -5,7 +5,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card"
       className={cn(
-        "rounded-base shadow-shadow border-border bg-background text-foreground font-base flex flex-col gap-1 border-2 py-5",
+        "rounded-base shadow-shadow border-border bg-background text-foreground font-base flex flex-col gap-5 border-2 py-5",
         className,
       )}
       {...props}

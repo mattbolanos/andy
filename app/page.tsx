@@ -1,13 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Suspense } from "react";
 import { HeroButton } from "@/components/home/hero-button";
+import { QuickLinks } from "@/components/home/quick-links";
 import {
   RecentTracks,
   RecentTracksSkeleton,
 } from "@/components/home/recent-tracks";
 import { RecentWork } from "@/components/home/recent-work";
+import { Button } from "@/components/ui/button";
 import { RecentTracksSchema } from "@/lib/schemas";
 import Andy from "@/public/andy.jpeg";
+import { socialLinks } from "./constants";
 
 async function RecentTracksWrapper() {
   const res = await fetch(
@@ -67,11 +71,33 @@ export default function Home() {
           </Suspense>
         </div>
       </div>
-
       {/* recent work */}
       <div className="space-y-4" id="work">
-        <h2 className="text-3xl font-bold tracking-tight">Recent Work</h2>
+        <div>
+          <h2 className="text-3xl font-bold tracking-tight">Recent Work</h2>
+          <QuickLinks />
+        </div>
         <RecentWork />
+      </div>
+      {/* contact */}
+      <div className="space-y-4">
+        <h2 className="text-3xl font-bold tracking-tight">Contact</h2>
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-4">
+          {socialLinks.map((link) => (
+            <Link href={link.href} key={link.href} target="_blank" prefetch>
+              <Button variant="neutral" className="w-full gap-1">
+                <Image
+                  src={`/${link.label.toLowerCase()}.svg`}
+                  alt={link.label}
+                  width={24}
+                  height={24}
+                  className="size-4 md:size-6"
+                />
+                {link.label}
+              </Button>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

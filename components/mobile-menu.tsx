@@ -1,10 +1,10 @@
 "use client";
 
 import { ExternalLinkIcon, XIcon } from "lucide-react";
-import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
+import { navigationLinks, socialLinks } from "@/app/constants";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -16,41 +16,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-type NavigationLink = {
-  label: string;
-  href: Route;
-  blank?: boolean;
-};
-
-type SocialLink = {
-  label: string;
-  href: Route;
-};
-
-const socialLinks: SocialLink[] = [
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/no_finer_steiner/",
-  },
-  {
-    label: "Twitter",
-    href: "https://x.com/nofinersteiner",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/andy-steiner-08a49b179/",
-  },
-  {
-    label: "Mail",
-    href: "mailto:andysteiner2@gmail.com",
-  },
-];
-
-export function MobileMenu({
-  navigationLinks,
-}: {
-  navigationLinks: NavigationLink[];
-}) {
+export function MobileMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (

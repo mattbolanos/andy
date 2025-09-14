@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import type z from "zod";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { RecentTracksSchema } from "@/lib/schemas";
+import { Button } from "../ui/button";
 
 type RecentTracks = z.infer<
   typeof RecentTracksSchema
@@ -27,7 +27,7 @@ export function RecentTracks({ tracks }: { tracks: RecentTracks[] }) {
             No tracks found
           </p>
         ) : (
-          <div className="flex w-full flex-col">
+          <div className="flex w-full flex-col gap-5">
             <div className="flex flex-col gap-3">
               {tracks.map((track) => {
                 const bestImage =
@@ -71,14 +71,15 @@ export function RecentTracks({ tracks }: { tracks: RecentTracks[] }) {
                 );
               })}
             </div>
-            <Separator className="my-3" />
             <Link
               href="https://www.last.fm/user/nofinersteiner"
               prefetch
               target="_blank"
-              className="mt-auto flex cursor-pointer items-center gap-2 font-medium underline-offset-4 hover:underline"
+              className="flex w-full cursor-pointer items-center gap-2 font-medium underline-offset-4 hover:underline"
             >
-              View full Last.fm profile
+              <Button variant="neutral" className="w-full">
+                View full Last.fm profile
+              </Button>
             </Link>
           </div>
         )}
@@ -98,7 +99,7 @@ export function RecentTracksSkeleton() {
           </CardTitle>
         </CardHeader>
         <CardContent className="flex flex-1">
-          <div className="flex w-full flex-col">
+          <div className="flex w-full flex-col gap-5">
             <div className="flex flex-col gap-3">
               {["skeleton-1", "skeleton-2", "skeleton-3"].map((key) => (
                 <div key={key} className="flex min-w-0 items-center gap-2">
@@ -116,9 +117,8 @@ export function RecentTracksSkeleton() {
                   </span>
                 </div>
               ))}
-              <Separator />
-              <Skeleton className="h-6 w-40" />
             </div>
+            <Skeleton className="h-10 w-full" />
           </div>
         </CardContent>
       </Card>
