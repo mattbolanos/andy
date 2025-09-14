@@ -100,15 +100,15 @@ export function RecentTracksSkeleton() {
         <CardContent className="flex flex-1">
           <div className="flex w-full flex-col">
             <div className="flex flex-col gap-3">
-              {[...Array(3)].map((_, i) => (
-                <div key={i} className="flex min-w-0 items-center gap-2">
+              {["skeleton-1", "skeleton-2", "skeleton-3"].map((key) => (
+                <div key={key} className="flex min-w-0 items-center gap-2">
                   <Skeleton className="rounded-base size-10 object-cover" />
-                  <div className="flex min-w-0 flex-col gap-0.5">
+                  <div className="flex min-w-0 flex-col gap-1">
                     <h3 className="truncate">
-                      <Skeleton className="h-5.5 w-40" />
+                      <Skeleton className="h-5 w-40" />
                     </h3>
                     <span className="text-muted-foreground truncate text-xs">
-                      <Skeleton className="h-3.5 w-20" />
+                      <Skeleton className="h-3 w-20" />
                     </span>
                   </div>
                   <span className="text-muted-foreground ml-auto text-xs">
