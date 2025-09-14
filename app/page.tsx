@@ -1,7 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Suspense } from "react";
-import { Contact } from "@/components/contact";
 import { HeroButton } from "@/components/home/hero-button";
 import { QuickLinks } from "@/components/home/quick-links";
 import {
@@ -9,10 +7,8 @@ import {
   RecentTracksSkeleton,
 } from "@/components/home/recent-tracks";
 import { RecentWork } from "@/components/home/recent-work";
-import { Button } from "@/components/ui/button";
 import { RecentTracksSchema } from "@/lib/schemas";
 import Andy from "@/public/andy.jpeg";
-import { socialLinks } from "./constants";
 
 async function RecentTracksWrapper() {
   const res = await fetch(
