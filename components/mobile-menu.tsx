@@ -64,6 +64,7 @@ export function MobileMenu() {
                 key={link.href}
                 href={link.href}
                 target="_blank"
+                rel="noopener noreferrer"
                 prefetch
                 className="flex items-center justify-center gap-2"
               >

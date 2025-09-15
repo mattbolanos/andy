@@ -21,6 +21,18 @@ type AlbumPublication = {
   reviews: AlbumReview[];
 };
 
+type InterviewFeature = {
+  publication: string;
+  title: string;
+  url: Route;
+  image: string;
+};
+
+export type PublicationFeature = {
+  publication: string;
+  features: Omit<InterviewFeature, "image" | "publication">[];
+};
+
 export const navigationLinks: NavigationLink[] = [
   {
     label: "Home",
@@ -254,6 +266,160 @@ export const albumReviews: AlbumPublication[] = [
       {
         imageUrl: "leon-circles.jpeg",
         href: "https://stagedhaze.com/2022/03/04/leons-third-album-circles-takes-a-different-approach-to-the-pop-music-of-her-peers/",
+      },
+    ],
+  },
+];
+
+export const recentWork: InterviewFeature[] = [
+  {
+    publication: "The Ringer",
+    image: "ringer_pop-gamification.jpeg",
+    title: "The Gamification of Pop Music",
+    url: "https://www.theringer.com/2025/01/03/music/gamification-of-pop-music-billboard-hot-100-challenge-justin-bieber-bts-chart-data-streaming",
+  },
+  {
+    publication: "The Daily Beast",
+    image: "daily-beast_end-coachella.jpg",
+    title: "This Was the End of Coachella - As We Knew It",
+    url: "https://www.thedailybeast.com/this-was-the-end-of-coachellaas-we-knew-it/?ref=author",
+  },
+  {
+    publication: "The Daily Beast",
+    image: "daily-beast_is_end_of_coachella.jpg",
+    title: "Is This the End of Coachella?",
+    url: "https://www.thedailybeast.com/is-this-the-end-of-coachella/?ref=author",
+  },
+  {
+    publication: "Paste Magazine",
+    image: "paste_shame-gas-brakes.jpeg",
+    title: "Shame Are All Gas, No Brakes",
+    url: "https://www.pastemagazine.com/music/shame/shame-are-all-gas-no-brakes",
+  },
+];
+
+export const interviewFeatures: PublicationFeature[] = [
+  {
+    publication: "The Ringer",
+    features: [
+      {
+        title: "The Gamification of Pop Music",
+        url: "https://www.theringer.com/2025/01/03/music/gamification-of-pop-music-billboard-hot-100-challenge-justin-bieber-bts-chart-data-streaming",
+      },
+    ],
+  },
+
+  {
+    publication: "The Daily Beast",
+    features: [
+      {
+        title: "This Was the End of Coachella - As We Knew It",
+        url: "https://www.thedailybeast.com/this-was-the-end-of-coachellaas-we-knew-it/?ref=author",
+      },
+      {
+        title: "Is This the End of Coachella?",
+        url: "https://www.thedailybeast.com/is-this-the-end-of-coachella/?ref=author",
+      },
+    ],
+  },
+  {
+    publication: "Paste Magazine",
+    features: [
+      {
+        title: "Shame Are All Gas, No Brakes",
+        url: "https://www.pastemagazine.com/music/shame/shame-are-all-gas-no-brakes",
+      },
+      {
+        title: "Geordie Greep Goes Global",
+        url: "https://www.pastemagazine.com/music/geordie-greep/geordie-greep-is-ready-to-go-global",
+      },
+      {
+        title: "Magdalena Bay Want To Feel It All",
+        url: "https://www.pastemagazine.com/music/magdalena-bay/magdalena-bay-want-to-feel-it-all",
+      },
+      {
+        title: "How 2014 was the Worst Year In Pop Music of the Last Decade",
+        url: "https://www.pastemagazine.com/music/scene-report/how-2014-was-the-worst-year-in-pop-music-of-the-last-decade",
+      },
+      {
+        title: "The Uncountable Triumphs of Daneshevskaya",
+        url: "https://www.pastemagazine.com/music/daneshevskaya/daneshevskaya-long-is-the-tunnel-interview",
+      },
+      {
+        title: "The 15 Greatest Charli XCX Songs",
+        url: "https://www.pastemagazine.com/music/charli-xcx/the-15-greatest-charli-xcx-songs",
+      },
+      {
+        title: "The 20 Greatest Peter Gabriel Songs",
+        url: "https://www.pastemagazine.com/music/peter-gabriel/20-greatest-peter-gabriel-songs-of-all-time-2",
+      },
+    ],
+  },
+  {
+    publication: "Under The Radar",
+    features: [
+      {
+        title: "Review of Governor's Ball 2024",
+        url: "https://www.undertheradarmag.com",
+      },
+      {
+        title: "Mannequin Pussy @ Brooklyn Steel",
+        url: "https://www.undertheradarmag.com",
+      },
+      {
+        title: "Interview with Cameron Winter of Geese",
+        url: "https://www.undertheradarmag.com",
+      },
+      {
+        title: "Interview with Cory Hanson",
+        url: "https://www.undertheradarmag.com",
+      },
+      {
+        title: "Profile of Alex Lahey",
+        url: "https://www.undertheradarmag.com",
+      },
+    ],
+  },
+  {
+    publication: "Northern Transmissions",
+    features: [
+      {
+        title: "Review of Jane Remover @ Music Hall of Williamsburg",
+        url: "https://northerntransmissions.com/live-review-jane-remover-at-may-3rd-at-music-hall-of-williamsburg",
+      },
+      {
+        title: "Review of This Is Lorelei @ Knockdown Center",
+        url: "https://northerntransmissions.com/live-review-this-is-lorelei-at-knockdown-center",
+      },
+      {
+        title: "Review of Hotline TNT Release Show @ Rough Trade",
+        url: "https://northerntransmissions.com/live-review-hotline-tnt-raspberry-moon-release-show-at-rough-trade-nyc",
+      },
+    ],
+  },
+  {
+    publication: "The Needle Drop",
+    features: [
+      {
+        title: "The Best and Worst of Coachella 2025",
+        url: "https://theneedledrop.com",
+      },
+      {
+        title: "Full News Coverage at The Needle Drop",
+        url: "https://theneedledrop.com",
+      },
+    ],
+  },
+  {
+    publication: "Chartmetric",
+    features: [
+      {
+        title: "Does Indie Sleaze Actually Exist?",
+        url: "https://hmc.chartmetric.com",
+      },
+      {
+        title: "Do Non-Televised Grammys Mean Anything Anymore?",
+        url: "https://hmc.chartmetric.com",
       },
     ],
   },

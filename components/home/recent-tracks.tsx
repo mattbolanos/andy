@@ -75,7 +75,8 @@ export function RecentTracks({ tracks }: { tracks: RecentTracks[] }) {
               href="https://www.last.fm/user/nofinersteiner"
               prefetch
               target="_blank"
-              className="flex w-full cursor-pointer items-center gap-2 font-medium underline-offset-4 hover:underline"
+              rel="noopener noreferrer"
+              className="flex w-full cursor-pointer items-center gap-2 font-medium"
             >
               <Button variant="neutral" className="w-full">
                 View full Last.fm profile
