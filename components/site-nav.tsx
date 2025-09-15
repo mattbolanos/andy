@@ -36,7 +36,7 @@ export default function SiteNav() {
                 >
                   {link.label}
                   {link.blank && (
-                    <ExternalLinkIcon className="text-muted-foreground size-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ExternalLinkIcon className="group-hover:text-main size-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   )}
                 </NavigationMenuLink>
               </NavigationMenuItem>

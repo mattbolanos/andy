@@ -19,8 +19,12 @@ import {
 export function MobileMenu() {
   const [isOpen, setIsOpen] = React.useState(false);
 
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen} modal={false}>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <Button
           size="sm"
@@ -36,11 +40,12 @@ export function MobileMenu() {
         <SheetHeader className="p-0">
           <SheetTitle className="sr-only">Andy Steiner</SheetTitle>
         </SheetHeader>
-        <div className="-mx-3 flex flex-col space-y-4">
+        <div className="-mx-3 flex flex-col space-y-6">
           {navigationLinks.map((link) => (
             <SheetClose
               key={link.href}
               className="hover:bg-main/60 rounded-base px-2 py-1 text-left"
+              onClick={handleClose}
             >
               <Link
                 prefetch

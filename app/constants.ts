@@ -28,6 +28,18 @@ type InterviewFeature = {
   image: string;
 };
 
+type PublicationProduction = {
+  publication: string;
+  description: string;
+  href?: Route;
+  productions?: string[];
+  linkType: "youtube" | "link";
+  links?: Array<{
+    image: string;
+    href: Route;
+  }>;
+};
+
 export type PublicationFeature = {
   publication: string;
   features: Omit<InterviewFeature, "image" | "publication">[];
@@ -420,6 +432,141 @@ export const interviewFeatures: PublicationFeature[] = [
       {
         title: "Do Non-Televised Grammys Mean Anything Anymore?",
         url: "https://hmc.chartmetric.com/nontelevised-grammys-awards-streaming-impact",
+      },
+    ],
+  },
+];
+
+export const publicationProductions: PublicationProduction[] = [
+  {
+    publication: "Live from My Den",
+    linkType: "youtube",
+    description:
+      "A live music and interview series featuring artists from around the world performing in intimate locations.",
+    productions: [
+      "https://www.youtube.com/embed/DMPdxlWxCeg?si=jwk-e6vz3FEL1nfT",
+      "https://www.youtube.com/embed/RP3rxHXpwQs?si=4BNWtBmehmNOTFfq",
+      "https://www.youtube.com/embed/-uTsKBoVHro?si=RWZIE5zGJUZTuFzY",
+      "https://www.youtube.com/embed/xlaPt6h5Itc?si=EgNZT7Ox2pFAqNz0",
+      "https://www.youtube.com/embed/thW2i-X5YT8?si=WPWFsrKivNYx1wwK",
+      "https://www.youtube.com/embed/c8lzs9ijRjI?si=yDW0hvjSkHaJN6-k",
+      "https://www.youtube.com/embed/mOVHGMhq6lM?si=ihy5XFReMXADuulH",
+      "https://www.youtube.com/embed/FBSufpfhNX4?si=22CkzFc48m-5txJn",
+      "https://www.youtube.com/embed/qlITWOriA6E?si=1sVcXATVmwviUpx",
+      "https://www.youtube.com/embed/-aKXGGZsQeA?si=ffpvGg7bt0joks7s",
+      "https://www.youtube.com/embed/lP9dLjued9Q?si=EfUObvQW44Izubgb",
+      "https://www.youtube.com/embed/1YC7yTqoHRQ?si=eiXG4eVUlQhBsEtV",
+    ],
+  },
+  {
+    publication: "Monumental: Ellie Goulding at Kew Gardens",
+    linkType: "youtube",
+    href: "https://www.amazon.com/gp/video/detail/B0B68QDTWV",
+    description:
+      "A music performance and interview series featuring artists in iconic locations around the world. Available to stream on Amazon Prime. Winner of the Environmental Media Association award for Variety Television.",
+    productions: [
+      "https://www.youtube.com/embed/fwjlw2K8vAg?si=FlvcxucmTmIGumDE",
+      "https://www.youtube.com/embed/yEy96ePsfN4?si=8-ALqN_JFqJvyEoS",
+    ],
+  },
+  {
+    publication: "Variety - Full Production Credits",
+    linkType: "link",
+    description: "Live from My Den Season 5",
+    links: [
+      {
+        href: "https://variety.com/video/shame-live-from-my-den/",
+        image: "shame-s5.png",
+      },
+      {
+        href: "https://variety.com/video/maisie-peters-the-good-witch-live-from-my-den",
+        image: "maisie-peters-s5.png",
+      },
+      {
+        href: "https://variety.com/video/the-aces-live-from-my-den",
+        image: "the-aces-s5.png",
+      },
+      {
+        href: "https://variety.com/video/chika-samson-live-from-my-den",
+        image: "chika-samson-s5.png",
+      },
+      {
+        href: "https://variety.com/video/ryan-beatty-live-from-my-den",
+        image: "ryan-beatty-s5.png",
+      },
+      {
+        href: "https://variety.com/video/art-school-girlfriend-live-from-my-den-performance",
+        image: "art-school-girlfriend-s5.png",
+      },
+    ],
+  },
+  {
+    publication: "Variety - Full Production Credits",
+    linkType: "link",
+    description: "Live from My Den Season 4",
+    links: [
+      {
+        href: "https://variety.com/video/idles-crawler-beachland-ballroom-live-from-my-den/",
+        image: "idles-s4.png",
+      },
+      {
+        href: "https://variety.com/video/ingrid-andress-live-from-my-den-nashville",
+        image: "ingrid-andress-s4.png",
+      },
+      {
+        href: "https://variety.com/video/muna-silk-chiffon-acoustic-taylor-swift-live-from-my-den",
+        image: "muna-s4.png",
+      },
+      {
+        href: "https://variety.com/video/jack-johnson-blake-mills-live-from-my-den",
+        image: "jack-johnson-s4.png",
+      },
+      {
+        href: "https://variety.com/video/kota-the-friend-live-from-my-den-upcoming-album-favorite-new-york-rappers",
+        image: "kota-the-friend-s4.png",
+      },
+      {
+        href: "https://variety.com/2022/music/news/noah-kahan-stick-season-live-from-my-den-1235463570",
+        image: "noah-kahan-s4.png",
+      },
+      {
+        href: "https://variety.com/video/soccer-mommy-sometimes-forever-pushing-past-comfort-zone-live-from-my-den",
+        image: "soccer-mommy-s4.png",
+      },
+    ],
+  },
+  {
+    publication: "Variety - Full Production Credits",
+    linkType: "link",
+    description: "Live from My Den Season 3",
+    links: [
+      {
+        href: "https://variety.com/video/magdalena-bay-artists-den-performance-interview-video",
+        image: "magdalena-bay-s3.png",
+      },
+      {
+        href: "https://variety.com/video/tank-bangas-red-balloon-live-from-my-den",
+        image: "tank-bangas-s3.png",
+      },
+      {
+        href: "https://variety.com/video/pinegrove-1111-live-from-my-den",
+        image: "pinegrove-s3.png",
+      },
+      {
+        href: "https://variety.com/video/nicole-atkins-memphis-ice-live-from-my-den",
+        image: "nicole-atkins-s3.png",
+      },
+      {
+        href: "https://variety.com/video/mxmtoon-rising-live-from-my-den",
+        image: "mxmtoon-s3.png",
+      },
+      {
+        href: "https://variety.com/video/kojey-radical-live-from-my-den-performance",
+        image: "kojey-radical-s3.png",
+      },
+      {
+        href: "https://variety.com/video/justin-quiles-daddy-yankee-influences",
+        image: "justin-quiles-s3.png",
       },
     ],
   },
