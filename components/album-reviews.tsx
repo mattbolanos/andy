@@ -4,33 +4,38 @@ import { albumReviews } from "@/app/constants";
 
 export function AlbumReviews() {
   return (
-    <div className="space-y-4">
-      {["Paste Magazine"].map((publication) => (
-        <div key={publication}>
-          <h3 className="mb-4 text-2xl font-normal italic">{publication}</h3>
-          <div className="grid grid-cols-2 gap-6 md:items-stretch md:gap-4 lg:grid-cols-6">
-            {albumReviews
-              .filter((review) => review.publication === publication)
-              .map((review) => (
+    <div className="space-y-6">
+      <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+        Album Reviews
+      </h2>
+      <div className="space-y-10 md:space-y-16">
+        {albumReviews.map((publication) => (
+          <div key={publication.publication}>
+            <h3 className="mb-4 text-2xl font-normal italic">
+              {publication.publication}
+            </h3>
+            <div className="grid grid-cols-2 gap-6 md:items-stretch md:gap-4 lg:grid-cols-6">
+              {publication.reviews.map((review) => (
                 <Link
                   href={review.href}
                   key={review.href}
                   target="_blank"
                   prefetch
-                  className="group hover:translate-x-boxShadowX hover:translate-y-boxShadowY col-span-1 transition-all hover:shadow-none"
+                  className="group hover:translate-x-reverseBoxShadowX hover:translate-y-reverseBoxShadowY col-span-1 transition-all duration-250"
                 >
                   <Image
+                    alt={review.imageUrl}
                     src={`/albums/${review.imageUrl}`}
                     width={140}
                     height={140}
-                    className="border-border rounded-base shadow-shadow aspect-square border-2 object-cover group-hover:shadow-none"
-                    alt={review.publication}
+                    className="border-border rounded-base group-hover:shadow-shadow aspect-square border-2 object-cover"
                   />
                 </Link>
               ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

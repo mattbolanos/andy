@@ -7,12 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function Reviews() {
-  return (
-    <div className="space-y-6">
-      <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-        Album Reviews
-      </h2>
-      <AlbumReviews />
-    </div>
-  );
+  return <AlbumReviews />;
 }
