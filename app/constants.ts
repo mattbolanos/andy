@@ -216,27 +216,27 @@ export const albumReviews: AlbumPublication[] = [
         href: "https://stagedhaze.com/2023/01/26/samia-lets-her-emotions-roar-on-tenacious-sophomore-album-honey/",
       },
       {
-        imageUrl: "1975 - Being Funny In A Foreign Language.jpg",
+        imageUrl: "1975-being-funny-in-a-foreign-language.jpeg",
         href: "https://stagedhaze.com/2022/10/19/on-being-funny-in-a-foreign-language-the-1975-are-more-confident-than-ever/",
       },
       {
-        imageUrl: "Rina-Sawayama.jpg",
+        imageUrl: "rina-sawayama-hold-the-girl.jpeg",
         href: "https://stagedhaze.com/2022/09/22/rina-sawayamas-sophomore-album-hold-the-girl-pushes-the-limits-of-pop-music-but-still-feels-safe/",
       },
       {
-        imageUrl: "marlon-williams-my-boy-album-artwork-cover-art.jpg",
+        imageUrl: "marlon-williams-my-boy.jpeg",
         href: "https://stagedhaze.com/2022/09/08/marlon-williams-my-boy-is-a-loose-collection-of-70s-fragments/",
       },
       {
-        imageUrl: "Perfume-Genius-Ugly-Season.jpeg",
+        imageUrl: "perfume-genius-ugly-season.jpeg",
         href: "https://stagedhaze.com/2022/06/17/on-ugly-season-perfume-genius-is-more-abstract-than-ever/",
       },
       {
-        imageUrl: "unnamed.jpg",
+        imageUrl: "king-gizzard-omnium-gatherum.jpeg",
         href: "https://stagedhaze.com/2022/04/22/king-gizzard-bring-the-best-of-their-mosaic-discography-on-omnium-gatherum/",
       },
       {
-        imageUrl: "image003.jpg",
+        imageUrl: "wet-leg.jpeg",
         href: "https://stagedhaze.com/2022/04/08/wet-legs-highly-anticipated-debut-album-is-absurd-funny-and-disarming/",
       },
       {
@@ -244,15 +244,15 @@ export const albumReviews: AlbumPublication[] = [
         href: "https://stagedhaze.com/2022/04/06/christian-lee-hutsons-quitters-process-21st-century-overload-in-real-time/",
       },
       {
-        imageUrl: "Charli-XCX-Crash.jpg",
+        imageUrl: "charli-xcx-crash.jpeg",
         href: "https://stagedhaze.com/2022/03/18/on-fifth-studio-album-charli-xcx-stages-the-perfect-crash/",
       },
       {
-        imageUrl: "Nilufer-Yanya-Painless.jpeg",
+        imageUrl: "nilufer-yanya-painless.jpeg",
         href: "https://stagedhaze.com/2022/03/14/nilufer-yanya-tackles-feeling-on-sophomore-album-painless/",
       },
       {
-        imageUrl: "71wDEaWKt8L._UF1000,1000_QL80_.jpg",
+        imageUrl: "leon-circles.jpeg",
         href: "https://stagedhaze.com/2022/03/04/leons-third-album-circles-takes-a-different-approach-to-the-pop-music-of-her-peers/",
       },
     ],

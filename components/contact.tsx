@@ -10,7 +10,7 @@ export function Contact() {
       <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-4">
         {socialLinks.map((link) => (
           <Link href={link.href} key={link.href} target="_blank" prefetch>
-            <Button variant="neutral" className="w-full gap-1">
+            <Button variant="neutral" className="w-full gap-2">
               <Image
                 src={`/${link.label.toLowerCase()}.svg`}
                 alt={link.label}

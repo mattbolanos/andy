@@ -6,23 +6,23 @@ export function QuickLinks() {
       <Link
         href="/reviews"
         prefetch
-        className="text-muted-foreground hover:text-main font-medium hover:underline hover:underline-offset-4"
+        className="hover:text-main font-medium hover:underline hover:underline-offset-4"
       >
         All Reviews
       </Link>
-      <span className="text-muted-foreground">•</span>
+      <span>•</span>
       <Link
         href="/interviews"
         prefetch
-        className="text-muted-foreground hover:text-main font-medium hover:underline hover:underline-offset-4"
+        className="hover:text-main font-medium hover:underline hover:underline-offset-4"
       >
         All Interviews
       </Link>
-      <span className="text-muted-foreground">•</span>
+      <span>•</span>
       <Link
         href="/production"
         prefetch
-        className="text-muted-foreground hover:text-main font-medium hover:underline hover:underline-offset-4"
+        className="hover:text-main font-medium hover:underline hover:underline-offset-4"
       >
         Production
       </Link>

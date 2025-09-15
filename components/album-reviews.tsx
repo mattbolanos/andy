@@ -14,7 +14,7 @@ export function AlbumReviews() {
             <h3 className="mb-4 text-2xl font-normal italic">
               {publication.publication}
             </h3>
-            <div className="grid grid-cols-2 gap-6 md:items-stretch md:gap-4 lg:grid-cols-6">
+            <div className="grid grid-cols-3 gap-6 sm:grid-cols-4 md:items-stretch md:gap-4 lg:grid-cols-6">
               {publication.reviews.map((review) => (
                 <Link
                   href={review.href}
