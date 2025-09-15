@@ -360,23 +360,23 @@ export const interviewFeatures: PublicationFeature[] = [
     features: [
       {
         title: "Review of Governor's Ball 2024",
-        url: "https://www.undertheradarmag.com",
+        url: "https://www.undertheradarmag.com/reviews/governors_ball_day_3_flushing_meadows_corona_park_queens_nyc_june_9_2024",
       },
       {
         title: "Mannequin Pussy @ Brooklyn Steel",
-        url: "https://www.undertheradarmag.com",
+        url: "https://www.undertheradarmag.com/reviews/mannequin_pussy_brooklyn_steel_brooklyn_nyc_may_16_2024",
       },
       {
         title: "Interview with Cameron Winter of Geese",
-        url: "https://www.undertheradarmag.com",
+        url: "https://www.undertheradarmag.com/interviews/geese_on_3d_country",
       },
       {
         title: "Interview with Cory Hanson",
-        url: "https://www.undertheradarmag.com",
+        url: "https://www.undertheradarmag.com/interviews/cory_hanson_on_merging_genres_and_his_new_album_western_cum",
       },
       {
         title: "Profile of Alex Lahey",
-        url: "https://www.undertheradarmag.com",
+        url: "https://www.undertheradarmag.com/interviews/alex_lahey_on_the_answer_is_always_yes",
       },
     ],
   },
@@ -402,11 +402,11 @@ export const interviewFeatures: PublicationFeature[] = [
     features: [
       {
         title: "The Best and Worst of Coachella 2025",
-        url: "https://theneedledrop.com",
+        url: "https://theneedledrop.com/the-best-and-worst-of-coachella-2025",
       },
       {
         title: "Full News Coverage at The Needle Drop",
-        url: "https://theneedledrop.com",
+        url: "https://theneedledrop.com/author/andy-steiner",
       },
     ],
   },
@@ -415,11 +415,11 @@ export const interviewFeatures: PublicationFeature[] = [
     features: [
       {
         title: "Does Indie Sleaze Actually Exist?",
-        url: "https://hmc.chartmetric.com",
+        url: "https://hmc.chartmetric.com/indie-sleaze-revival-2024-music-trends",
       },
       {
         title: "Do Non-Televised Grammys Mean Anything Anymore?",
-        url: "https://hmc.chartmetric.com",
+        url: "https://hmc.chartmetric.com/nontelevised-grammys-awards-streaming-impact",
       },
     ],
   },

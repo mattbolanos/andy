@@ -4,46 +4,31 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 export function InterviewGrid() {
+  const publicationOrder = [
+    { name: "The Ringer" },
+    { name: "Paste Magazine", gridClass: "row-span-2" },
+    { name: "Northern Transmissions", gridClass: "row-span-2" },
+    { name: "The Daily Beast" },
+    { name: "Under The Radar" },
+    { name: "The Needle Drop" },
+    { name: "Chartmetric" },
+  ];
+
   return (
-    <div className="grid grid-cols-3 gap-6 md:gap-4">
-      {/* ringer */}
-      {interviewFeatures
-        .filter((feature) => feature.publication === "The Ringer")
-        .map((publicationFeature) => (
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 md:gap-4">
+      {publicationOrder.map(({ name, gridClass }) => {
+        const publicationFeature = interviewFeatures.find(
+          (f) => f.publication === name,
+        );
+        if (!publicationFeature) return null;
+        return (
           <PublicationCard
             key={publicationFeature.publication}
             publicationFeature={publicationFeature}
+            gridClass={gridClass}
           />
-        ))}
-      {/* paste magazine */}
-      {interviewFeatures
-        .filter((feature) => feature.publication === "Paste Magazine")
-        .map((publicationFeature) => (
-          <PublicationCard
-            key={publicationFeature.publication}
-            publicationFeature={publicationFeature}
-            gridClass="row-span-2"
-          />
-        ))}
-      {/* northern transmissions */}
-      {interviewFeatures
-        .filter((feature) => feature.publication === "Northern Transmissions")
-        .map((publicationFeature) => (
-          <PublicationCard
-            key={publicationFeature.publication}
-            publicationFeature={publicationFeature}
-            gridClass="row-span-2"
-          />
-        ))}
-      {/* the daily beast */}
-      {interviewFeatures
-        .filter((feature) => feature.publication === "The Daily Beast")
-        .map((publicationFeature) => (
-          <PublicationCard
-            key={publicationFeature.publication}
-            publicationFeature={publicationFeature}
-          />
-        ))}
+        );
+      })}
     </div>
   );
 }
