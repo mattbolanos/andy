@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Gelasio } from "next/font/google";
 import "./globals.css";
 import { Contact } from "@/components/contact";
 import SiteNav from "@/components/site-nav";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const gelasioSerif = Gelasio({
+  variable: "--font-gelasio",
   subsets: ["latin"],
 });
 
@@ -44,7 +39,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} overscroll-none antialiased`}
+        className={`${gelasioSerif.variable} overscroll-none font-serif antialiased`}
       >
         <SiteNav />
         <div className="mx-auto mt-[var(--nav)] w-full max-w-screen-lg space-y-10 px-4 py-12 md:space-y-16 md:px-6 lg:px-8">

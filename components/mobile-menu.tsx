@@ -44,7 +44,7 @@ export function MobileMenu() {
           {navigationLinks.map((link) => (
             <SheetClose
               key={link.href}
-              className="hover:bg-main/60 rounded-base px-2 py-1 text-left"
+              className="hover:bg-main/40 rounded-base px-2 py-1 text-left"
               onClick={handleClose}
             >
               <Link
