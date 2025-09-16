@@ -5,6 +5,7 @@ Welcome to the maintenance guide for Andy Steiner's portfolio website! This guid
 ## 📋 Table of Contents
 
 - [Getting Started](#getting-started)
+- [How to Edit Files](#how-to-edit-files)
 - [Understanding the Site Structure](#understanding-the-site-structure)
 - [Adding New Content](#adding-new-content)
   - [📰 Adding Articles](#adding-articles)
@@ -27,6 +28,105 @@ This is a Next.js website that showcases Andy Steiner's work as a music writer, 
 - **Production** - Video productions and creative work
 
 All content is managed through a single file called `constants.ts`, making it easy to add and organize new work.
+
+---
+
+## ✏️ How to Edit Files
+
+Before you can add new content, you'll need to know how to edit the files. Here are several options, from technical to non-technical:
+
+### 🖥️ Option 1: Using Visual Studio Code (Recommended)
+
+**Visual Studio Code (VSCode)** is a free, user-friendly code editor that makes editing files easy.
+
+**Step 1**: Download VSCode
+- Go to [code.visualstudio.com](https://code.visualstudio.com)
+- Download and install VSCode for your computer
+
+**Step 2**: Get Access to the Repository
+- Contact **Matt** to request collaborator access to the repository
+- He'll add you as a collaborator so you can edit files directly
+
+**Step 3**: Open the Project
+- Open VSCode
+- Click "File" → "Open Folder"
+- Navigate to the project folder and select it
+- You'll see all the files in the left sidebar
+
+**Step 4**: Edit the Constants File
+- In the left sidebar, navigate to `app` → `constants.ts`
+- Click on the file to open it
+- Make your changes following the guides below
+- Press `Ctrl+S` (Windows) or `Cmd+S` (Mac) to save
+
+**Benefits of VSCode**:
+- ✅ Syntax highlighting makes code easier to read
+- ✅ Auto-completion helps prevent typos
+- ✅ Built-in file explorer
+- ✅ Easy to see all files at once
+
+### 🌐 Option 2: GitHub Web Interface (No Software Needed)
+
+If you prefer not to install any software, you can edit files directly in your web browser.
+
+**Step 1**: Get Repository Access
+- Contact **Matt** to request collaborator access
+- He'll give you the repository URL
+
+**Step 2**: Navigate to the File
+- Go to the repository on GitHub
+- Click on `app` folder
+- Click on `constants.ts` file
+- Click the pencil icon (✏️) in the top-right corner
+
+**Step 3**: Make Your Changes
+- Edit the file directly in the browser
+- Follow the guides below for what to add
+- Scroll down and add a commit message like "Add new article"
+- Click "Commit changes"
+
+**Benefits of GitHub Web**:
+- ✅ No software to install
+- ✅ Works on any computer with internet
+- ✅ Automatic backup of changes
+- ✅ Easy to see what changed
+
+### 📱 Option 3: Mobile-Friendly Editing
+
+**GitHub Mobile App**:
+- Download "GitHub" app from your phone's app store
+- Sign in with your GitHub account
+- Navigate to the repository
+- Tap on `app/constants.ts`
+- Tap the pencil icon to edit
+- Make changes and commit
+
+### 🔧 Option 4: Other Code Editors
+
+If you're comfortable with code editors, you can also use:
+- **Sublime Text** (sublimetext.com)
+- **Atom** (atom.io)
+- **Notepad++** (Windows only)
+- **TextEdit** (Mac, but not recommended for code)
+
+### 📁 Option 5: File Manager + Text Editor
+
+**For the truly non-technical**:
+
+**Step 1**: Download the File
+- Contact **Matt** to get the `constants.ts` file
+- Save it to your computer (like your Desktop)
+
+**Step 2**: Edit with Any Text Editor
+- Right-click the file → "Open with" → "Notepad" (Windows) or "TextEdit" (Mac)
+- Make your changes following the guides below
+- Save the file
+
+**Step 3**: Send Back to Matt
+- Email the updated file back to Matt
+- He'll upload it to the website
+
+**Note**: This method requires Matt to manually update the site each time.
 
 ---
 
@@ -297,6 +397,22 @@ If you run into issues:
 4. **Test locally** - Run `npm run dev` to see your changes
 
 Remember: This site is designed to be easy to maintain. Most updates only require editing the `constants.ts` file and adding images to the public folder!
+
+---
+
+## 🚀 Quick Start for Non-Technical Users
+
+**If you just want to add content quickly:**
+
+1. **Contact Matt** for repository access
+2. **Choose your method**:
+   - **Easiest**: Use GitHub web interface (no software needed)
+   - **Best experience**: Download VSCode (free, easy to use)
+3. **Find the file**: Look for `app/constants.ts`
+4. **Follow the guides** above for your content type
+5. **Save your changes**
+
+**Need help?** Contact Matt - he can walk you through any of these methods!
 
 ---
 
