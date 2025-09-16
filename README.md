@@ -33,100 +33,79 @@ All content is managed through a single file called `constants.ts`, making it ea
 
 ## ✏️ How to Edit Files
 
-Before you can add new content, you'll need to know how to edit the files. Here are several options, from technical to non-technical:
+This guide will walk you through setting up everything you need to edit the website files. We'll use **Visual Studio Code (VSCode)** - a free, user-friendly program that makes editing code easy.
 
-### 🖥️ Option 1: Using Visual Studio Code (Recommended)
+### 🖥️ Step 1: Download and Install VSCode
 
-**Visual Studio Code (VSCode)** is a free, user-friendly code editor that makes editing files easy.
+**What is VSCode?** It's a free program that helps you edit code files. Think of it like Microsoft Word, but for websites.
 
-**Step 1**: Download VSCode
-- Go to [code.visualstudio.com](https://code.visualstudio.com)
-- Download and install VSCode for your computer
+1. Go to [code.visualstudio.com](https://code.visualstudio.com)
+2. Click the big blue "Download" button
+3. Run the installer and follow the setup wizard
+4. Open VSCode when installation is complete
 
-**Step 2**: Get Access to the Repository
-- Contact **Matt** to request collaborator access to the repository
-- He'll add you as a collaborator so you can edit files directly
+### 🔑 Step 2: Get Access to the Repository
 
-**Step 3**: Open the Project
-- Open VSCode
-- Click "File" → "Open Folder"
-- Navigate to the project folder and select it
-- You'll see all the files in the left sidebar
+**What is a repository?** It's like a folder in the cloud where all the website files are stored.
 
-**Step 4**: Edit the Constants File
-- In the left sidebar, navigate to `app` → `constants.ts`
-- Click on the file to open it
-- Make your changes following the guides below
-- Press `Ctrl+S` (Windows) or `Cmd+S` (Mac) to save
+1. Contact **Matt** and ask for "collaborator access to the repository"
+2. Matt will add you as a collaborator
+3. Matt will give you the repository URL (it looks like: `https://github.com/username/website-name`)
 
-**Benefits of VSCode**:
-- ✅ Syntax highlighting makes code easier to read
-- ✅ Auto-completion helps prevent typos
-- ✅ Built-in file explorer
-- ✅ Easy to see all files at once
+### 📥 Step 3: Clone the Repository (Download the Files)
 
-### 🌐 Option 2: GitHub Web Interface (No Software Needed)
+**What is cloning?** It's like downloading a copy of all the website files to your computer.
 
-If you prefer not to install any software, you can edit files directly in your web browser.
+1. **Open VSCode**
+2. **Press `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac)**
+3. **Type "Git: Clone"** and press Enter
+4. **Paste the repository URL** that Matt gave you
+5. **Choose a folder** on your computer to save the files (like Desktop or Documents)
+6. **Wait for the download** to complete
 
-**Step 1**: Get Repository Access
-- Contact **Matt** to request collaborator access
-- He'll give you the repository URL
+**You should now see all the website files in the left sidebar!**
 
-**Step 2**: Navigate to the File
-- Go to the repository on GitHub
-- Click on `app` folder
-- Click on `constants.ts` file
-- Click the pencil icon (✏️) in the top-right corner
+### ✏️ Step 4: Edit the Constants File
 
-**Step 3**: Make Your Changes
-- Edit the file directly in the browser
-- Follow the guides below for what to add
-- Scroll down and add a commit message like "Add new article"
-- Click "Commit changes"
+1. **In the left sidebar**, click on the `app` folder
+2. **Click on `constants.ts`** - this is the main file you'll edit
+3. **Make your changes** following the guides below
+4. **Press `Ctrl+S` (Windows) or `Cmd+S` (Mac)** to save
 
-**Benefits of GitHub Web**:
-- ✅ No software to install
-- ✅ Works on any computer with internet
-- ✅ Automatic backup of changes
-- ✅ Easy to see what changed
+### 📤 Step 5: Push Your Changes (Upload to the Website)
 
-### 📱 Option 3: Mobile-Friendly Editing
+**What is pushing?** It's like uploading your changes back to the cloud so the website updates.
 
-**GitHub Mobile App**:
-- Download "GitHub" app from your phone's app store
-- Sign in with your GitHub account
-- Navigate to the repository
-- Tap on `app/constants.ts`
-- Tap the pencil icon to edit
-- Make changes and commit
+1. **Look for the Source Control icon** in the left sidebar (looks like a branch/fork)
+2. **Click on it**
+3. **You'll see your changes** listed under "Changes"
+4. **Type a message** in the box (like "Added new article about Taylor Swift")
+5. **Click the checkmark** (✓) next to your message
+6. **Click the "..." menu** and select "Push"
 
-### 🔧 Option 4: Other Code Editors
+**That's it! Your changes are now live on the website!**
 
-If you're comfortable with code editors, you can also use:
-- **Sublime Text** (sublimetext.com)
-- **Atom** (atom.io)
-- **Notepad++** (Windows only)
-- **TextEdit** (Mac, but not recommended for code)
+### 📥 Step 6: Pull Latest Changes (Get Updates from Others)
 
-### 📁 Option 5: File Manager + Text Editor
+**What is pulling?** It's like downloading the latest changes that Matt or others have made.
 
-**For the truly non-technical**:
+**Always do this before you start editing:**
 
-**Step 1**: Download the File
-- Contact **Matt** to get the `constants.ts` file
-- Save it to your computer (like your Desktop)
+1. **Click the Source Control icon** in the left sidebar
+2. **Click the "..." menu** and select "Pull"
+3. **Wait for it to complete**
 
-**Step 2**: Edit with Any Text Editor
-- Right-click the file → "Open with" → "Notepad" (Windows) or "TextEdit" (Mac)
-- Make your changes following the guides below
-- Save the file
+**This ensures you have the latest version before making changes!**
 
-**Step 3**: Send Back to Matt
-- Email the updated file back to Matt
-- He'll upload it to the website
+### 🔄 Your Daily Workflow
 
-**Note**: This method requires Matt to manually update the site each time.
+**Every time you want to add content:**
+
+1. **Pull latest changes** (Step 6)
+2. **Edit the constants.ts file** (Step 4)
+3. **Push your changes** (Step 5)
+
+**That's it! The website will update automatically.**
 
 ---
 
@@ -400,19 +379,18 @@ Remember: This site is designed to be easy to maintain. Most updates only requir
 
 ---
 
-## 🚀 Quick Start for Non-Technical Users
+## 🚀 Quick Start Guide
 
 **If you just want to add content quickly:**
 
 1. **Contact Matt** for repository access
-2. **Choose your method**:
-   - **Easiest**: Use GitHub web interface (no software needed)
-   - **Best experience**: Download VSCode (free, easy to use)
-3. **Find the file**: Look for `app/constants.ts`
-4. **Follow the guides** above for your content type
-5. **Save your changes**
+2. **Download VSCode** from [code.visualstudio.com](https://code.visualstudio.com)
+3. **Follow Steps 1-6** in the "How to Edit Files" section above
+4. **Find the file**: Look for `app/constants.ts`
+5. **Follow the guides** below for your content type
+6. **Push your changes** to update the website
 
-**Need help?** Contact Matt - he can walk you through any of these methods!
+**Need help?** Contact Matt - he can walk you through the setup process!
 
 ---
 
