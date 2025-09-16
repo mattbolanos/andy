@@ -119,7 +119,7 @@ function NavigationMenuLink({
         target={blank ? "_blank" : undefined}
         rel="noopener noreferrer"
         className={cn(
-          "rounded-base block space-y-1 p-2 leading-none no-underline transition-colors outline-none select-none focus-visible:ring-4 focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
+          "rounded-base block space-y-1 p-2 leading-none no-underline transition-colors outline-none select-none [&_svg:not([class*='size-'])]:size-4",
           className,
         )}
       >

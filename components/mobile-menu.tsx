@@ -28,7 +28,7 @@ export function MobileMenu() {
       <SheetTrigger asChild>
         <Button
           size="sm"
-          className="md:hidden"
+          className="focus-visible:outline-none md:hidden"
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           <span className="relative flex size-7 items-center justify-center">
