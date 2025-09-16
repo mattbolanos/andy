@@ -1,36 +1,303 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎵 Andy Steiner's Portfolio Site
 
-## Getting Started
+Welcome to the maintenance guide for Andy Steiner's portfolio website! This guide will help you understand how to keep the site updated with new content, whether you're adding articles, album reviews, interviews, or production work.
 
-First, run the development server:
+## 📋 Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Getting Started](#getting-started)
+- [Understanding the Site Structure](#understanding-the-site-structure)
+- [Adding New Content](#adding-new-content)
+  - [📰 Adding Articles](#adding-articles)
+  - [🎵 Adding Album Reviews](#adding-album-reviews)
+  - [🎤 Adding Interviews & Features](#adding-interviews--features)
+  - [🎬 Adding Production Work](#adding-production-work)
+- [Managing Images](#managing-images)
+- [Reordering Content](#reordering-content)
+- [Technical Notes](#technical-notes)
+
+---
+
+## 🚀 Getting Started
+
+This is a Next.js website that showcases Andy Steiner's work as a music writer, critic, and producer. The site is organized into four main sections:
+
+- **Home** - Recent work and personal info
+- **Interviews** - Published interviews and features
+- **Reviews** - Album reviews organized by publication
+- **Production** - Video productions and creative work
+
+All content is managed through a single file called `constants.ts`, making it easy to add and organize new work.
+
+---
+
+## 🏗️ Understanding the Site Structure
+
+The website is built like a digital portfolio where everything is controlled by one main file:
+
+```
+📁 app/
+  └── constants.ts ← This is where ALL content lives
+📁 public/
+  ├── articles/ ← Article images go here
+  ├── albums/ ← Album cover images go here
+  └── productions/ ← Production thumbnail images go here
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Key Point**: You don't need to touch any code files except `constants.ts` to add new content!
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Adding New Content
 
-## Learn More
+### 📰 Adding Articles
 
-To learn more about Next.js, take a look at the following resources:
+Articles appear on the homepage under "Recent Work" and in the Interviews section.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Step 1**: Add your article image to the `public/articles/` folder
+- Use a descriptive filename like `publication_article-title.jpg`
+- Recommended size: 400x400 pixels or larger
+- Supported formats: JPG, PNG, WebP
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Step 2**: Open `app/constants.ts` and find the `recentWork` section (around line 286)
 
-## Deploy on Vercel
+**Step 3**: Add your new article to the list:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```javascript
+export const recentWork: InterviewFeature[] = [
+  {
+    publication: "The Ringer",
+    image: "ringer_new-article.jpg", // Your image filename
+    title: "Your Article Title Here",
+    url: "https://example.com/your-article-url",
+  },
+  // ... existing articles
+];
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Step 4**: Also add it to the `interviewFeatures` section (around line 313) under the correct publication:
+
+```javascript
+{
+  publication: "The Ringer",
+  features: [
+    {
+      title: "Your Article Title Here",
+      url: "https://example.com/your-article-url",
+    },
+    // ... existing features
+  ],
+},
+```
+
+### 🎵 Adding Album Reviews
+
+Album reviews are organized by publication and appear in the Reviews section.
+
+**Step 1**: Add the album cover image to `public/albums/`
+- Use a descriptive filename like `artist-album-name.jpg`
+- Recommended size: 300x300 pixels (square)
+- Supported formats: JPG, PNG, WebP
+
+**Step 2**: Open `app/constants.ts` and find the `albumReviews` section (around line 91)
+
+**Step 3**: Add your review to the appropriate publication:
+
+```javascript
+export const albumReviews: AlbumPublication[] = [
+  {
+    publication: "Paste Magazine",
+    reviews: [
+      {
+        imageUrl: "new-artist-new-album.jpg", // Your image filename
+        href: "https://example.com/review-url",
+      },
+      // ... existing reviews
+    ],
+  },
+  // ... other publications
+];
+```
+
+**To add a new publication**, create a new object:
+
+```javascript
+{
+  publication: "New Publication Name",
+  reviews: [
+    {
+      imageUrl: "album-cover.jpg",
+      href: "https://example.com/review-url",
+    },
+  ],
+},
+```
+
+### 🎤 Adding Interviews & Features
+
+Interviews and features appear in the Interviews section, organized by publication.
+
+**Step 1**: Add any images to `public/articles/` (if needed)
+
+**Step 2**: Open `app/constants.ts` and find the `interviewFeatures` section (around line 313)
+
+**Step 3**: Add your feature to the appropriate publication:
+
+```javascript
+{
+  publication: "Paste Magazine",
+  features: [
+    {
+      title: "Your Interview/Feature Title",
+      url: "https://example.com/feature-url",
+    },
+    // ... existing features
+  ],
+},
+```
+
+### 🎬 Adding Production Work
+
+Production work appears in the Production section and can include YouTube videos or external links.
+
+**For YouTube Videos**:
+
+**Step 1**: Open `app/constants.ts` and find the `publicationProductions` section (around line 440)
+
+**Step 2**: Add to an existing YouTube section or create a new one:
+
+```javascript
+{
+  publication: "Live from My Den",
+  linkType: "youtube",
+  description: "Description of your production series",
+  productions: [
+    "https://www.youtube.com/embed/VIDEO_ID?si=EMBED_CODE",
+    // ... existing videos
+  ],
+},
+```
+
+**For External Links with Images**:
+
+**Step 1**: Add thumbnail images to `public/productions/`
+- Use descriptive filenames like `show-season-episode.png`
+- Recommended size: 400x225 pixels (16:9 aspect ratio)
+
+**Step 2**: Add to the productions list:
+
+```javascript
+{
+  publication: "Variety - Full Production Credits",
+  linkType: "link",
+  description: "Live from My Den Season 6",
+  links: [
+    {
+      href: "https://example.com/production-url",
+      image: "production-thumbnail.png", // Your image filename
+    },
+    // ... existing links
+  ],
+},
+```
+
+---
+
+## 🖼️ Managing Images
+
+### Image Guidelines
+
+**Article Images** (`public/articles/`):
+- Size: 400x400 pixels or larger
+- Format: JPG, PNG, or WebP
+- Naming: `publication_article-title.jpg`
+
+**Album Covers** (`public/albums/`):
+- Size: 300x300 pixels (square)
+- Format: JPG, PNG, or WebP
+- Naming: `artist-album-name.jpg`
+
+**Production Thumbnails** (`public/productions/`):
+- Size: 400x225 pixels (16:9 aspect ratio)
+- Format: PNG or JPG
+- Naming: `show-season-episode.png`
+
+### Adding Images
+
+1. **Upload** your image to the appropriate folder in `public/`
+2. **Name** it descriptively (no spaces, use hyphens or underscores)
+3. **Reference** the exact filename in your `constants.ts` entry
+
+---
+
+## 🔄 Reordering Content
+
+### Recent Work (Homepage)
+The `recentWork` array controls what appears on the homepage. To reorder:
+1. Open `app/constants.ts`
+2. Find the `recentWork` section
+3. Move items up or down in the array
+4. The first item appears first on the homepage
+
+### Album Reviews
+Reviews are organized by publication, then by order within each publication's array. To reorder:
+1. Find the publication in `albumReviews`
+2. Move items within that publication's `reviews` array
+3. To change publication order, move entire publication objects
+
+### Interviews & Features
+Features are organized by publication. To reorder:
+1. Find the publication in `interviewFeatures`
+2. Move items within that publication's `features` array
+3. To change publication order, move entire publication objects
+
+### Production Work
+Productions are organized by type (YouTube vs. Links) and then by order. To reorder:
+1. Find the production section in `publicationProductions`
+2. Move items within the `productions` or `links` array
+
+---
+
+## ⚙️ Technical Notes
+
+### File Locations
+- **Main content file**: `app/constants.ts`
+- **Images**: `public/articles/`, `public/albums/`, `public/productions/`
+- **Homepage**: `app/page.tsx`
+- **Reviews page**: `app/reviews/page.tsx`
+- **Interviews page**: `app/interviews/page.tsx`
+- **Production page**: `app/production/page.tsx`
+
+### Important Rules
+1. **Always** use the exact filename in your constants (case-sensitive)
+2. **Don't** use spaces in filenames - use hyphens or underscores
+3. **Test** your changes by running the development server
+4. **Keep** the same structure when adding new content
+
+### Development Commands
+```bash
+# Start the development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+---
+
+## 🆘 Need Help?
+
+If you run into issues:
+
+1. **Check filenames** - Make sure they match exactly in constants.ts
+2. **Check image paths** - Ensure images are in the correct public folder
+3. **Check syntax** - Make sure you have proper commas and brackets
+4. **Test locally** - Run `npm run dev` to see your changes
+
+Remember: This site is designed to be easy to maintain. Most updates only require editing the `constants.ts` file and adding images to the public folder!
+
+---
+
+*Last updated: January 2025*
