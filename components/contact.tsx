@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export function Contact() {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 pb-6">
       <h2 className="text-3xl font-bold tracking-tight">Contact</h2>
       <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-4">
         {socialLinks.map((link) => (
