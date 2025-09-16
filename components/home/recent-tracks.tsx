@@ -1,4 +1,3 @@
-import { formatDistanceToNow } from "date-fns";
 import { HeadphonesIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -40,10 +39,6 @@ export function RecentTracks({ tracks }: { tracks: RecentTracks[] }) {
                   track.image[0]["#text"] ??
                   "";
 
-                const timestamp = track.date?.uts
-                  ? new Date(Number(track.date.uts) * 1000)
-                  : null;
-
                 return (
                   <div
                     key={track.mbid + track.date?.uts}
@@ -62,11 +57,6 @@ export function RecentTracks({ tracks }: { tracks: RecentTracks[] }) {
                         {track.artist["#text"]}
                       </p>
                     </div>
-                    {timestamp && (
-                      <span className="text-muted-foreground ml-auto text-xs">
-                        {formatDistanceToNow(timestamp)} ago
-                      </span>
-                    )}
                   </div>
                 );
               })}
@@ -113,9 +103,6 @@ export function RecentTracksSkeleton() {
                       <Skeleton className="h-3 w-20" />
                     </span>
                   </div>
-                  <span className="text-muted-foreground ml-auto text-xs">
-                    <Skeleton className="h-4 w-10" />
-                  </span>
                 </div>
               ))}
             </div>

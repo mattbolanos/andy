@@ -12,7 +12,7 @@ export function HeroButton() {
   return (
     <Button
       size="lg"
-      className="mt-4 text-base font-medium"
+      className="mt-4 text-base font-semibold"
       onMouseDown={handleScrollDown}
     >
       View Work

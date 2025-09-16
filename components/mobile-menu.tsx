@@ -31,8 +31,12 @@ export function MobileMenu() {
           className="md:hidden"
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
-          <span className="relative flex size-6 items-center justify-center">
-            {isOpen ? <XIcon className="size-6" /> : <span>Menu</span>}
+          <span className="relative flex size-7 items-center justify-center">
+            {isOpen ? (
+              <XIcon className="size-7 stroke-4" />
+            ) : (
+              <span className="font-semibold">Menu</span>
+            )}
           </span>
         </Button>
       </SheetTrigger>
