@@ -1,26 +1,26 @@
 # 🎵 Andy Steiner's Portfolio Site
 
-Welcome to the maintenance guide for Andy Steiner's portfolio website! This guide will help you understand how to keep the site updated with new content, whether you're adding articles, album reviews, interviews, or production work.
+This guide will help you understand how to keep the site updated with new content, whether you're adding articles, album reviews, interviews, or production work.
 
 ## 📋 Table of Contents
 
-- [Getting Started](#getting-started)
-- [How to Edit Files](#how-to-edit-files)
-- [Understanding the Site Structure](#understanding-the-site-structure)
-- [Adding New Content](#adding-new-content)
+- [🚀 Getting Started](#getting-started)
+- [✏️ How to Edit Files](#how-to-edit-files)
+- [🏗️ Understanding the Site Structure](#understanding-the-site-structure)
+- [✨ Adding New Content](#adding-new-content)
   - [📰 Adding Articles](#adding-articles)
   - [🎵 Adding Album Reviews](#adding-album-reviews)
   - [🎤 Adding Interviews & Features](#adding-interviews--features)
   - [🎬 Adding Production Work](#adding-production-work)
-- [Managing Images](#managing-images)
-- [Reordering Content](#reordering-content)
+- [🖼️ Managing Images](#managing-images)
+- [🔄 Reordering Content](#reordering-content)
 - [Technical Notes](#technical-notes)
 
 ---
 
 ## 🚀 Getting Started
 
-This is a Next.js website that showcases Andy Steiner's work as a music writer, critic, and producer. The site is organized into four main sections:
+The site is organized into four main sections:
 
 - **Home** - Recent work and personal info
 - **Interviews** - Published interviews and features
@@ -40,7 +40,7 @@ This guide will walk you through setting up everything you need to edit the webs
 **What is VSCode?** It's a free program that helps you edit code files. Think of it like Microsoft Word, but for websites.
 
 1. Go to [code.visualstudio.com](https://code.visualstudio.com)
-2. Click the big blue "Download" button
+2. Download it. It's free
 3. Run the installer and follow the setup wizard
 4. Open VSCode when installation is complete
 
@@ -50,7 +50,6 @@ This guide will walk you through setting up everything you need to edit the webs
 
 1. Contact **Matt** and ask for "collaborator access to the repository"
 2. Matt will add you as a collaborator
-3. Matt will give you the repository URL (it looks like: `https://github.com/username/website-name`)
 
 ### 📥 Step 3: Clone the Repository (Download the Files)
 
@@ -59,11 +58,11 @@ This guide will walk you through setting up everything you need to edit the webs
 1. **Open VSCode**
 2. **Press `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac)**
 3. **Type "Git: Clone"** and press Enter
-4. **Paste the repository URL** that Matt gave you
+4. **Paste the repository URL** https://github.com/mattbolanos/andy
 5. **Choose a folder** on your computer to save the files (like Desktop or Documents)
 6. **Wait for the download** to complete
 
-**You should now see all the website files in the left sidebar!**
+**You should now see all the website files in the left sidebar**
 
 ### ✏️ Step 4: Edit the Constants File
 
@@ -133,6 +132,7 @@ The website is built like a digital portfolio where everything is controlled by 
 Articles appear on the homepage under "Recent Work" and in the Interviews section.
 
 **Step 1**: Add your article image to the `public/articles/` folder
+
 - Use a descriptive filename like `publication_article-title.jpg`
 - Recommended size: 400x400 pixels or larger
 - Supported formats: JPG, PNG, WebP
@@ -173,6 +173,7 @@ export const recentWork: InterviewFeature[] = [
 Album reviews are organized by publication and appear in the Reviews section.
 
 **Step 1**: Add the album cover image to `public/albums/`
+
 - Use a descriptive filename like `artist-album-name.jpg`
 - Recommended size: 300x300 pixels (square)
 - Supported formats: JPG, PNG, WebP
@@ -259,6 +260,7 @@ Production work appears in the Production section and can include YouTube videos
 **For External Links with Images**:
 
 **Step 1**: Add thumbnail images to `public/productions/`
+
 - Use descriptive filenames like `show-season-episode.png`
 - Recommended size: 400x225 pixels (16:9 aspect ratio)
 
@@ -286,16 +288,19 @@ Production work appears in the Production section and can include YouTube videos
 ### Image Guidelines
 
 **Article Images** (`public/articles/`):
+
 - Size: 400x400 pixels or larger
 - Format: JPG, PNG, or WebP
 - Naming: `publication_article-title.jpg`
 
 **Album Covers** (`public/albums/`):
+
 - Size: 300x300 pixels (square)
 - Format: JPG, PNG, or WebP
 - Naming: `artist-album-name.jpg`
 
 **Production Thumbnails** (`public/productions/`):
+
 - Size: 400x225 pixels (16:9 aspect ratio)
 - Format: PNG or JPG
 - Naming: `show-season-episode.png`
@@ -311,26 +316,34 @@ Production work appears in the Production section and can include YouTube videos
 ## 🔄 Reordering Content
 
 ### Recent Work (Homepage)
+
 The `recentWork` array controls what appears on the homepage. To reorder:
+
 1. Open `app/constants.ts`
 2. Find the `recentWork` section
 3. Move items up or down in the array
 4. The first item appears first on the homepage
 
 ### Album Reviews
+
 Reviews are organized by publication, then by order within each publication's array. To reorder:
+
 1. Find the publication in `albumReviews`
 2. Move items within that publication's `reviews` array
 3. To change publication order, move entire publication objects
 
 ### Interviews & Features
+
 Features are organized by publication. To reorder:
+
 1. Find the publication in `interviewFeatures`
 2. Move items within that publication's `features` array
 3. To change publication order, move entire publication objects
 
 ### Production Work
+
 Productions are organized by type (YouTube vs. Links) and then by order. To reorder:
+
 1. Find the production section in `publicationProductions`
 2. Move items within the `productions` or `links` array
 
@@ -339,6 +352,7 @@ Productions are organized by type (YouTube vs. Links) and then by order. To reor
 ## ⚙️ Technical Notes
 
 ### File Locations
+
 - **Main content file**: `app/constants.ts`
 - **Images**: `public/articles/`, `public/albums/`, `public/productions/`
 - **Homepage**: `app/page.tsx`
@@ -347,22 +361,11 @@ Productions are organized by type (YouTube vs. Links) and then by order. To reor
 - **Production page**: `app/production/page.tsx`
 
 ### Important Rules
+
 1. **Always** use the exact filename in your constants (case-sensitive)
 2. **Don't** use spaces in filenames - use hyphens or underscores
 3. **Test** your changes by running the development server
 4. **Keep** the same structure when adding new content
-
-### Development Commands
-```bash
-# Start the development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
-```
 
 ---
 
@@ -393,5 +396,3 @@ Remember: This site is designed to be easy to maintain. Most updates only requir
 **Need help?** Contact Matt - he can walk you through the setup process!
 
 ---
-
-*Last updated: January 2025*
