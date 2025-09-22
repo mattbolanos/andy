@@ -28,7 +28,7 @@ export default function Reviews() {
                   target="_blank"
                   prefetch
                   rel="noopener noreferrer"
-                  className="group hover:translate-x-reverseBoxShadowX hover:translate-y-reverseBoxShadowY col-span-1 transition-all duration-250"
+                  className="group hover:translate-x-reverseBoxShadowX hover:translate-y-reverseBoxShadowY col-span-1 transition-transform duration-250"
                 >
                   <Image
                     alt={review.imageUrl}
