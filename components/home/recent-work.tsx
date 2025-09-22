@@ -14,7 +14,7 @@ export function RecentWork() {
           prefetch
           rel="noopener noreferrer"
         >
-          <Card className="hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-all hover:shadow-none">
+          <Card className="hover:translate-x-boxShadowX hover:translate-y-boxShadowY transition-transform hover:shadow-none">
             <CardContent>
               <div className="flex min-w-0 items-center gap-2">
                 <Image

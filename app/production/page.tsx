@@ -75,7 +75,7 @@ export default function Production() {
                     target="_blank"
                     prefetch
                     rel="noopener noreferrer"
-                    className="group hover:translate-x-reverseBoxShadowX hover:translate-y-reverseBoxShadowY col-span-1 cursor-pointer transition-all duration-250"
+                    className="group hover:translate-x-reverseBoxShadowX hover:translate-y-reverseBoxShadowY col-span-1 cursor-pointer transition-transform duration-250"
                   >
                     <Image
                       src={`/productions/${link.image}`}
