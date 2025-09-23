@@ -32,7 +32,7 @@ type Article = {
   image: string;
 };
 
-export type PublicationFeature = {
+export type Features = {
   publication: string;
   features: Omit<Article, "image" | "publication">[];
 };
@@ -355,7 +355,7 @@ export const albumReviews: AlbumPublication[] = [
  * 2. Add the feature to the appropriate publication below
  * 3. If it should appear on homepage, also add it to recentArticles above
  */
-export const interviewFeatures: PublicationFeature[] = [
+export const interviewFeatures: Features[] = [
   {
     publication: "The Ringer",
     features: [
@@ -494,7 +494,8 @@ export const interviewFeatures: PublicationFeature[] = [
 export const youtubeProductions: YouTubeProduction[] = [
   {
     publication: "Live from My Den",
-    description: "A live music and interview series featuring artists from around the world performing in intimate locations.",
+    description:
+      "A live music and interview series featuring artists from around the world performing in intimate locations.",
     productions: [
       "https://www.youtube.com/embed/DMPdxlWxCeg?si=jwk-e6vz3FEL1nfT",
       "https://www.youtube.com/embed/RP3rxHXpwQs?si=4BNWtBmehmNOTFfq",
@@ -513,7 +514,8 @@ export const youtubeProductions: YouTubeProduction[] = [
   {
     publication: "Monumental: Ellie Goulding at Kew Gardens",
     href: "https://www.amazon.com/gp/video/detail/B0B68QDTWV",
-    description: "A music performance and interview series featuring artists in iconic locations around the world. Available to stream on Amazon Prime. Winner of the Environmental Media Association award for Variety Television.",
+    description:
+      "A music performance and interview series featuring artists in iconic locations around the world. Available to stream on Amazon Prime. Winner of the Environmental Media Association award for Variety Television.",
     productions: [
       "https://www.youtube.com/embed/fwjlw2K8vAg?si=FlvcxucmTmIGumDE",
       "https://www.youtube.com/embed/yEy96ePsfN4?si=8-ALqN_JFqJvyEoS",
@@ -626,73 +628,4 @@ export const linkProductions: LinkProduction[] = [
       },
     ],
   },
-];
-
-// ============================================================================
-// HELPER FUNCTIONS
-// ============================================================================
-
-/**
- * Get all articles from a specific publication
- */
-export function getArticlesByPublication(publication: string): Article[] {
-  return recentArticles.filter(article => article.publication === publication);
-}
-
-/**
- * Get all reviews from a specific publication
- */
-export function getReviewsByPublication(publication: string): AlbumReview[] {
-  const pub = albumReviews.find(p => p.publication === publication);
-  return pub ? pub.reviews : [];
-}
-
-/**
- * Get all features from a specific publication
- */
-export function getFeaturesByPublication(publication: string): Omit<Article, "image" | "publication">[] {
-  const pub = interviewFeatures.find(p => p.publication === publication);
-  return pub ? pub.features : [];
-}
-
-/**
- * Get all publications that have album reviews
- */
-export function getReviewPublications(): string[] {
-  return albumReviews.map(pub => pub.publication);
-}
-
-/**
- * Get all publications that have interview features
- */
-export function getFeaturePublications(): string[] {
-  return interviewFeatures.map(pub => pub.publication);
-}
-
-// ============================================================================
-// LEGACY EXPORTS (for backward compatibility)
-// ============================================================================
-
-/**
- * @deprecated Use recentArticles instead
- */
-export const recentWork = recentArticles;
-
-/**
- * @deprecated Use interviewFeatures instead
- */
-export const publicationFeatures = interviewFeatures;
-
-/**
- * @deprecated Use youtubeProductions and linkProductions instead
- */
-export const publicationProductions = [
-  ...youtubeProductions.map(prod => ({
-    ...prod,
-    linkType: "youtube" as const,
-  })),
-  ...linkProductions.map(prod => ({
-    ...prod,
-    linkType: "link" as const,
-  })),
 ];

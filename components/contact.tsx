@@ -16,7 +16,10 @@ export function Contact() {
             prefetch
             rel="noopener noreferrer"
           >
-            <Button variant="neutral" className="w-full gap-2">
+            <Button
+              variant="neutral"
+              className="w-full gap-2 transition-transform"
+            >
               <Image
                 src={`/${link.label.toLowerCase()}.svg`}
                 alt={link.label}

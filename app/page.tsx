@@ -20,6 +20,9 @@ async function RecentTracksWrapper() {
         format: "json",
         limit: "3",
       }),
+    {
+      cache: "no-store",
+    },
   ).then((res) => res.json());
   const tracks = RecentTracksSchema.safeParse(res);
 
