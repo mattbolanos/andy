@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { interviewFeatures, type PublicationFeature } from "@/app/constants";
+import { type Features, interviewFeatures } from "@/app/constants";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -37,7 +37,7 @@ function PublicationCard({
   publicationFeature,
   gridClass = "row-span-1",
 }: {
-  publicationFeature: PublicationFeature;
+  publicationFeature: Features;
   gridClass?: string;
 }) {
   return (

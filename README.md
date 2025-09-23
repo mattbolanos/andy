@@ -123,6 +123,26 @@ The website is built like a digital portfolio where everything is controlled by 
 
 **Key Point**: You don't need to touch any code files except `constants.ts` to add new content!
 
+### 📋 Content Organization
+
+The `constants.ts` file is now organized into clear sections:
+
+- **`recentArticles`** - Articles that appear on the homepage
+- **`albumReviews`** - Album reviews organized by publication
+- **`interviewFeatures`** - Interviews and features organized by publication
+- **`youtubeProductions`** - YouTube videos (embedded)
+- **`linkProductions`** - External links with thumbnails
+
+### 🔧 Helper Functions
+
+The file now includes helper functions to make content management easier:
+
+- `getArticlesByPublication(publication)` - Get all articles from a specific publication
+- `getReviewsByPublication(publication)` - Get all reviews from a specific publication
+- `getFeaturesByPublication(publication)` - Get all features from a specific publication
+- `getReviewPublications()` - Get list of all publications with reviews
+- `getFeaturePublications()` - Get list of all publications with features
+
 ---
 
 ## ✨ Adding New Content
@@ -137,12 +157,12 @@ Articles appear on the homepage under "Recent Work" and in the Interviews sectio
 - Recommended size: 400x400 pixels or larger
 - Supported formats: JPG, PNG, WebP
 
-**Step 2**: Open `app/constants.ts` and find the `recentWork` section (around line 286)
+**Step 2**: Open `app/constants.ts` and find the `recentArticles` section (around line 50)
 
 **Step 3**: Add your new article to the list:
 
 ```javascript
-export const recentWork: InterviewFeature[] = [
+export const recentArticles: Article[] = [
   {
     publication: "The Ringer",
     image: "ringer_new-article.jpg", // Your image filename
@@ -153,7 +173,7 @@ export const recentWork: InterviewFeature[] = [
 ];
 ```
 
-**Step 4**: Also add it to the `interviewFeatures` section (around line 313) under the correct publication:
+**Step 4**: Also add it to the `interviewFeatures` section (around line 200) under the correct publication:
 
 ```javascript
 {
@@ -178,7 +198,7 @@ Album reviews are organized by publication and appear in the Reviews section.
 - Recommended size: 300x300 pixels (square)
 - Supported formats: JPG, PNG, WebP
 
-**Step 2**: Open `app/constants.ts` and find the `albumReviews` section (around line 91)
+**Step 2**: Open `app/constants.ts` and find the `albumReviews` section (around line 100)
 
 **Step 3**: Add your review to the appropriate publication:
 
@@ -218,7 +238,7 @@ Interviews and features appear in the Interviews section, organized by publicati
 
 **Step 1**: Add any images to `public/articles/` (if needed)
 
-**Step 2**: Open `app/constants.ts` and find the `interviewFeatures` section (around line 313)
+**Step 2**: Open `app/constants.ts` and find the `interviewFeatures` section (around line 200)
 
 **Step 3**: Add your feature to the appropriate publication:
 
@@ -241,20 +261,21 @@ Production work appears in the Production section and can include YouTube videos
 
 **For YouTube Videos**:
 
-**Step 1**: Open `app/constants.ts` and find the `publicationProductions` section (around line 440)
+**Step 1**: Open `app/constants.ts` and find the `youtubeProductions` section (around line 300)
 
 **Step 2**: Add to an existing YouTube section or create a new one:
 
 ```javascript
-{
-  publication: "Live from My Den",
-  linkType: "youtube",
-  description: "Description of your production series",
-  productions: [
-    "https://www.youtube.com/embed/VIDEO_ID?si=EMBED_CODE",
-    // ... existing videos
-  ],
-},
+export const youtubeProductions: YouTubeProduction[] = [
+  {
+    publication: "Live from My Den",
+    description: "Description of your production series",
+    productions: [
+      "https://www.youtube.com/embed/VIDEO_ID?si=EMBED_CODE",
+      // ... existing videos
+    ],
+  },
+];
 ```
 
 **For External Links with Images**:
@@ -264,21 +285,22 @@ Production work appears in the Production section and can include YouTube videos
 - Use descriptive filenames like `show-season-episode.png`
 - Recommended size: 400x225 pixels (16:9 aspect ratio)
 
-**Step 2**: Add to the productions list:
+**Step 2**: Add to the link productions list:
 
 ```javascript
-{
-  publication: "Variety - Full Production Credits",
-  linkType: "link",
-  description: "Live from My Den Season 6",
-  links: [
-    {
-      href: "https://example.com/production-url",
-      image: "production-thumbnail.png", // Your image filename
-    },
-    // ... existing links
-  ],
-},
+export const linkProductions: LinkProduction[] = [
+  {
+    publication: "Variety - Full Production Credits",
+    description: "Live from My Den Season 6",
+    links: [
+      {
+        href: "https://example.com/production-url",
+        image: "production-thumbnail.png", // Your image filename
+      },
+      // ... existing links
+    ],
+  },
+];
 ```
 
 ---
@@ -317,10 +339,10 @@ Production work appears in the Production section and can include YouTube videos
 
 ### Recent Work (Homepage)
 
-The `recentWork` array controls what appears on the homepage. To reorder:
+The `recentArticles` array controls what appears on the homepage. To reorder:
 
 1. Open `app/constants.ts`
-2. Find the `recentWork` section
+2. Find the `recentArticles` section
 3. Move items up or down in the array
 4. The first item appears first on the homepage
 
