@@ -1,5 +1,9 @@
 import type { Route } from "next";
 
+// ============================================================================
+// TYPE DEFINITIONS
+// ============================================================================
+
 type SocialLink = {
   label: string;
   href: Route;
@@ -21,29 +25,37 @@ type AlbumPublication = {
   reviews: AlbumReview[];
 };
 
-type InterviewFeature = {
+type Article = {
   publication: string;
   title: string;
   url: Route;
   image: string;
 };
 
-type PublicationProduction = {
+export type PublicationFeature = {
+  publication: string;
+  features: Omit<Article, "image" | "publication">[];
+};
+
+type YouTubeProduction = {
   publication: string;
   description: string;
   href?: Route;
-  productions?: string[];
-  linkType: "youtube" | "link";
-  links?: Array<{
+  productions: string[];
+};
+
+type LinkProduction = {
+  publication: string;
+  description: string;
+  links: Array<{
     image: string;
     href: Route;
   }>;
 };
 
-export type PublicationFeature = {
-  publication: string;
-  features: Omit<InterviewFeature, "image" | "publication">[];
-};
+// ============================================================================
+// NAVIGATION & SOCIAL LINKS
+// ============================================================================
 
 export const navigationLinks: NavigationLink[] = [
   {
@@ -88,6 +100,55 @@ export const socialLinks: SocialLink[] = [
   },
 ];
 
+// ============================================================================
+// HOMEPAGE CONTENT
+// ============================================================================
+
+/**
+ * Recent articles that appear on the homepage
+ * To add a new article:
+ * 1. Add the image to public/articles/
+ * 2. Add the article here
+ * 3. Also add it to the interviews section below
+ */
+export const recentArticles: Article[] = [
+  {
+    publication: "The Ringer",
+    image: "ringer_pop-gamification.jpeg",
+    title: "The Gamification of Pop Music",
+    url: "https://www.theringer.com/2025/01/03/music/gamification-of-pop-music-billboard-hot-100-challenge-justin-bieber-bts-chart-data-streaming",
+  },
+  {
+    publication: "The Daily Beast",
+    image: "daily-beast_end-coachella.jpg",
+    title: "This Was the End of Coachella - As We Knew It",
+    url: "https://www.thedailybeast.com/this-was-the-end-of-coachellaas-we-knew-it/?ref=author",
+  },
+  {
+    publication: "The Daily Beast",
+    image: "daily-beast_is_end_of_coachella.jpg",
+    title: "Is This the End of Coachella?",
+    url: "https://www.thedailybeast.com/is-this-the-end-of-coachella/?ref=author",
+  },
+  {
+    publication: "Paste Magazine",
+    image: "paste_shame-gas-brakes.jpeg",
+    title: "Shame Are All Gas, No Brakes",
+    url: "https://www.pastemagazine.com/music/shame/shame-are-all-gas-no-brakes",
+  },
+];
+
+// ============================================================================
+// ALBUM REVIEWS
+// ============================================================================
+
+/**
+ * Album reviews organized by publication
+ * To add a new review:
+ * 1. Add the album cover image to public/albums/
+ * 2. Add the review to the appropriate publication below
+ * 3. To add a new publication, create a new object with publication name and reviews array
+ */
 export const albumReviews: AlbumPublication[] = [
   {
     publication: "Paste Magazine",
@@ -283,33 +344,17 @@ export const albumReviews: AlbumPublication[] = [
   },
 ];
 
-export const recentWork: InterviewFeature[] = [
-  {
-    publication: "The Ringer",
-    image: "ringer_pop-gamification.jpeg",
-    title: "The Gamification of Pop Music",
-    url: "https://www.theringer.com/2025/01/03/music/gamification-of-pop-music-billboard-hot-100-challenge-justin-bieber-bts-chart-data-streaming",
-  },
-  {
-    publication: "The Daily Beast",
-    image: "daily-beast_end-coachella.jpg",
-    title: "This Was the End of Coachella - As We Knew It",
-    url: "https://www.thedailybeast.com/this-was-the-end-of-coachellaas-we-knew-it/?ref=author",
-  },
-  {
-    publication: "The Daily Beast",
-    image: "daily-beast_is_end_of_coachella.jpg",
-    title: "Is This the End of Coachella?",
-    url: "https://www.thedailybeast.com/is-this-the-end-of-coachella/?ref=author",
-  },
-  {
-    publication: "Paste Magazine",
-    image: "paste_shame-gas-brakes.jpeg",
-    title: "Shame Are All Gas, No Brakes",
-    url: "https://www.pastemagazine.com/music/shame/shame-are-all-gas-no-brakes",
-  },
-];
+// ============================================================================
+// INTERVIEWS & FEATURES
+// ============================================================================
 
+/**
+ * Interviews and features organized by publication
+ * To add a new feature:
+ * 1. Add any images to public/articles/ (if needed)
+ * 2. Add the feature to the appropriate publication below
+ * 3. If it should appear on homepage, also add it to recentArticles above
+ */
 export const interviewFeatures: PublicationFeature[] = [
   {
     publication: "The Ringer",
@@ -320,7 +365,6 @@ export const interviewFeatures: PublicationFeature[] = [
       },
     ],
   },
-
   {
     publication: "The Daily Beast",
     features: [
@@ -437,12 +481,20 @@ export const interviewFeatures: PublicationFeature[] = [
   },
 ];
 
-export const publicationProductions: PublicationProduction[] = [
+// ============================================================================
+// PRODUCTION WORK
+// ============================================================================
+
+/**
+ * YouTube productions (embedded videos)
+ * To add a new YouTube production:
+ * 1. Get the YouTube embed URL (format: https://www.youtube.com/embed/VIDEO_ID?si=EMBED_CODE)
+ * 2. Add it to the appropriate production series below
+ */
+export const youtubeProductions: YouTubeProduction[] = [
   {
     publication: "Live from My Den",
-    linkType: "youtube",
-    description:
-      "A live music and interview series featuring artists from around the world performing in intimate locations.",
+    description: "A live music and interview series featuring artists from around the world performing in intimate locations.",
     productions: [
       "https://www.youtube.com/embed/DMPdxlWxCeg?si=jwk-e6vz3FEL1nfT",
       "https://www.youtube.com/embed/RP3rxHXpwQs?si=4BNWtBmehmNOTFfq",
@@ -460,18 +512,24 @@ export const publicationProductions: PublicationProduction[] = [
   },
   {
     publication: "Monumental: Ellie Goulding at Kew Gardens",
-    linkType: "youtube",
     href: "https://www.amazon.com/gp/video/detail/B0B68QDTWV",
-    description:
-      "A music performance and interview series featuring artists in iconic locations around the world. Available to stream on Amazon Prime. Winner of the Environmental Media Association award for Variety Television.",
+    description: "A music performance and interview series featuring artists in iconic locations around the world. Available to stream on Amazon Prime. Winner of the Environmental Media Association award for Variety Television.",
     productions: [
       "https://www.youtube.com/embed/fwjlw2K8vAg?si=FlvcxucmTmIGumDE",
       "https://www.youtube.com/embed/yEy96ePsfN4?si=8-ALqN_JFqJvyEoS",
     ],
   },
+];
+
+/**
+ * Link productions (external links with thumbnails)
+ * To add a new link production:
+ * 1. Add the thumbnail image to public/productions/
+ * 2. Add the production to the appropriate series below
+ */
+export const linkProductions: LinkProduction[] = [
   {
     publication: "Variety - Full Production Credits",
-    linkType: "link",
     description: "Live from My Den Season 5",
     links: [
       {
@@ -502,7 +560,6 @@ export const publicationProductions: PublicationProduction[] = [
   },
   {
     publication: "Variety - Full Production Credits",
-    linkType: "link",
     description: "Live from My Den Season 4",
     links: [
       {
@@ -537,7 +594,6 @@ export const publicationProductions: PublicationProduction[] = [
   },
   {
     publication: "Variety - Full Production Credits",
-    linkType: "link",
     description: "Live from My Den Season 3",
     links: [
       {
@@ -570,4 +626,73 @@ export const publicationProductions: PublicationProduction[] = [
       },
     ],
   },
+];
+
+// ============================================================================
+// HELPER FUNCTIONS
+// ============================================================================
+
+/**
+ * Get all articles from a specific publication
+ */
+export function getArticlesByPublication(publication: string): Article[] {
+  return recentArticles.filter(article => article.publication === publication);
+}
+
+/**
+ * Get all reviews from a specific publication
+ */
+export function getReviewsByPublication(publication: string): AlbumReview[] {
+  const pub = albumReviews.find(p => p.publication === publication);
+  return pub ? pub.reviews : [];
+}
+
+/**
+ * Get all features from a specific publication
+ */
+export function getFeaturesByPublication(publication: string): Omit<Article, "image" | "publication">[] {
+  const pub = interviewFeatures.find(p => p.publication === publication);
+  return pub ? pub.features : [];
+}
+
+/**
+ * Get all publications that have album reviews
+ */
+export function getReviewPublications(): string[] {
+  return albumReviews.map(pub => pub.publication);
+}
+
+/**
+ * Get all publications that have interview features
+ */
+export function getFeaturePublications(): string[] {
+  return interviewFeatures.map(pub => pub.publication);
+}
+
+// ============================================================================
+// LEGACY EXPORTS (for backward compatibility)
+// ============================================================================
+
+/**
+ * @deprecated Use recentArticles instead
+ */
+export const recentWork = recentArticles;
+
+/**
+ * @deprecated Use interviewFeatures instead
+ */
+export const publicationFeatures = interviewFeatures;
+
+/**
+ * @deprecated Use youtubeProductions and linkProductions instead
+ */
+export const publicationProductions = [
+  ...youtubeProductions.map(prod => ({
+    ...prod,
+    linkType: "youtube" as const,
+  })),
+  ...linkProductions.map(prod => ({
+    ...prod,
+    linkType: "link" as const,
+  })),
 ];

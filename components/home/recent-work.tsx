@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { recentWork } from "@/app/constants";
+import { recentArticles } from "@/app/constants";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function RecentWork() {
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-stretch md:gap-4">
-      {recentWork.map((work) => (
+      {recentArticles.map((work) => (
         <Link
           href={work.url}
           key={work.url}

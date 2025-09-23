@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { publicationProductions } from "../constants";
+import { youtubeProductions, linkProductions } from "../constants";
 
 export const metadata: Metadata = {
   title: "Production | Andy Steiner",
@@ -15,9 +15,7 @@ export default function Production() {
         Production
       </h2>
       <div className="space-y-10 md:space-y-16">
-        {publicationProductions
-          .filter((publication) => publication.linkType === "youtube")
-          .map((publication) => (
+        {youtubeProductions.map((publication) => (
             <div key={publication.publication + publication.description}>
               <div className="mb-4 flex flex-col">
                 {publication.href ? (
@@ -55,9 +53,7 @@ export default function Production() {
               </div>
             </div>
           ))}
-        {publicationProductions
-          .filter((publication) => publication.linkType === "link")
-          .map((publication) => (
+        {linkProductions.map((publication) => (
             <div key={publication.publication + publication.description}>
               <div className="mb-4 flex flex-col">
                 <h3 className="text-2xl font-normal italic">
