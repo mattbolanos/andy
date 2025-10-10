@@ -12,7 +12,7 @@ export function QuickLinks() {
       </Link>
       <span>•</span>
       <Link
-        href="/interviews"
+        href="/features"
         prefetch
         className="hover:text-main font-medium hover:underline hover:underline-offset-4"
       >
