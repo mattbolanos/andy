@@ -67,7 +67,7 @@ export function MobileMenu() {
         </div>
 
         <SheetFooter>
-          <div className="mb-4 grid grid-cols-4 items-center gap-8">
+          <div className="mb-4 grid grid-cols-3 items-center gap-8">
             {socialLinks.map((link) => (
               <Link
                 key={link.href}
