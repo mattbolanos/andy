@@ -115,10 +115,10 @@ export const recentArticles: Article[] = [
     url: "https://www.theringer.com/2025/01/03/music/gamification-of-pop-music-billboard-hot-100-challenge-justin-bieber-bts-chart-data-streaming",
   },
   {
-    publication: "The Daily Beast",
-    image: "daily-beast_end-coachella.jpg",
-    title: "This Was the End of Coachella - As We Knew It",
-    url: "https://www.thedailybeast.com/this-was-the-end-of-coachellaas-we-knew-it/?ref=author",
+    publication: "Substack",
+    image: "substack_folk-music-dead.jpeg",
+    title: "Folk Music Is Dead; Long Live Folk Music",
+    url: "https://andysteiner.substack.com/p/folk-music-is-dead-long-live-folk",
   },
   {
     publication: "The Daily Beast",
