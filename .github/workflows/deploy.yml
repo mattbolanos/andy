@@ -20,4 +20,5 @@ jobs:
       - name: Deploy project
         env:
           VERCEL_TOKEN: ${{ secrets.ANDY_VERCEL_TOKEN }}
+          VERCEL_PROJECT_NAME: nofinersteiner
         run: vercel --prod --confirm --token $VERCEL_TOKEN
