@@ -379,7 +379,7 @@ Productions are organized by type (YouTube vs. Links) and then by order. To reor
 - **Images**: `public/articles/`, `public/albums/`, `public/productions/`
 - **Homepage**: `app/page.tsx`
 - **Reviews page**: `app/reviews/page.tsx`
-- **Interviews page**: `app/interviews/page.tsx`
+- **Features page**: `app/features/page.tsx`
 - **Production page**: `app/production/page.tsx`
 
 ### Important Rules
