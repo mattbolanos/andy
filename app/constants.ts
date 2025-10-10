@@ -63,8 +63,8 @@ export const navigationLinks: NavigationLink[] = [
     href: "/",
   },
   {
-    label: "Interviews",
-    href: "/interviews",
+    label: "Features",
+    href: "/features",
   },
   {
     label: "Reviews",
@@ -89,10 +89,6 @@ export const socialLinks: SocialLink[] = [
   {
     label: "Twitter",
     href: "https://x.com/nofinersteiner",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/andy-steiner-08a49b179/",
   },
   {
     label: "Mail",
