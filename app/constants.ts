@@ -149,9 +149,18 @@ export const albumReviews: AlbumPublication[] = [
   {
     publication: "Paste Magazine",
     reviews: [
+      
       {
         imageUrl: "brat-but-different.jpeg",
         href: "https://www.pastemagazine.com/music/charli-xcx/brat-and-its-completely-different-but-also-still-brat-charli-xcx-review",
+      },
+      {
+        imageUrl: "mariah-carey-here-for-it-all.jpeg",
+        href: "https://www.pastemagazine.com/music/mariah-carey/mariah-carey-here-for-it-all-album-review",
+      },
+      {
+        imageUrl: "frost-children-sister.jpeg",
+        href: "https://www.pastemagazine.com/music/frost-children/frost-children-sister-album-review",
       },
       {
         imageUrl: "manning-fireworks.jpeg",
@@ -378,6 +387,10 @@ export const interviewFeatures: Features[] = [
     publication: "Paste Magazine",
     features: [
       {
+        title: "Wild Kinetic Dreams: Rush's Power Windows Turns 40",
+        url: "https://www.pastemagazine.com/music/rush/rush-power-windows-turns-40",
+      },
+      {
         title: "Shame Are All Gas, No Brakes",
         url: "https://www.pastemagazine.com/music/shame/shame-are-all-gas-no-brakes",
       },
@@ -435,6 +448,14 @@ export const interviewFeatures: Features[] = [
   {
     publication: "Northern Transmissions",
     features: [
+      {
+        title: "Review of University @ TV Eye",
+        url: "https://northerntransmissions.com/live-review-university-at-tv-eye-ridgewood-ny-october-30",
+      },
+      {
+        title: "Review of Gelli Haha @ Night Club 101",
+        url: "https://northerntransmissions.com/live-review-gelli-haha-at-night-club-101-in-new-york-city",
+      },
       {
         title: "Review of Jane Remover @ Music Hall of Williamsburg",
         url: "https://northerntransmissions.com/live-review-jane-remover-at-may-3rd-at-music-hall-of-williamsburg",
