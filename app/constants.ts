@@ -149,9 +149,18 @@ export const albumReviews: AlbumPublication[] = [
   {
     publication: "Paste Magazine",
     reviews: [
+      
       {
         imageUrl: "brat-but-different.jpeg",
         href: "https://www.pastemagazine.com/music/charli-xcx/brat-and-its-completely-different-but-also-still-brat-charli-xcx-review",
+      },
+      {
+        imageUrl: "mariah-carey-here-for-it-all.jpeg",
+        href: "https://www.pastemagazine.com/music/mariah-carey/mariah-carey-here-for-it-all-album-review",
+      },
+      {
+        imageUrl: "frost-children-sister.jpeg",
+        href: "https://www.pastemagazine.com/music/frost-children/frost-children-sister-album-review",
       },
       {
         imageUrl: "manning-fireworks.jpeg",
