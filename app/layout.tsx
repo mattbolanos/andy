@@ -42,7 +42,7 @@ export default function RootLayout({
         className={`${gelasioSerif.variable} overscroll-none font-serif antialiased`}
       >
         <SiteNav />
-        <div className="mx-auto mt-[var(--nav)] w-full max-w-screen-lg space-y-10 px-4 py-12 md:space-y-16 md:px-6 lg:px-8">
+        <div className="mx-auto mt-[var(--nav)] w-full max-w-screen-lg space-y-10 px-4 pb-6 md:pb-12 py-12 md:space-y-16 md:px-6 lg:px-8">
           <main>{children}</main>
           <Contact />
         </div>
