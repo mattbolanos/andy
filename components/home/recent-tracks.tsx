@@ -68,7 +68,10 @@ export function RecentTracks({ tracks }: { tracks: RecentTracks[] }) {
               rel="noopener noreferrer"
               className="flex w-full cursor-pointer items-center gap-2 font-medium"
             >
-              <Button variant="neutral" className="w-full transition-transform">
+              <Button
+                variant="reverseNeutral"
+                className="w-full cursor-pointer transition-transform"
+              >
                 View full Last.fm profile
               </Button>
             </Link>
