@@ -5,7 +5,7 @@
 
 :root {
   --nav: 60px;
-  --background: oklch(95.38% 0.0357 72.89);
+  --background: oklch(0.9638 0.025 72.89);
   --secondary-background: oklch(100% 0 0);
   --foreground: oklch(0% 0 0);
   --main-foreground: oklch(1 0 0);
