@@ -15,6 +15,7 @@ export function Contact() {
             target="_blank"
             prefetch
             rel="noopener noreferrer"
+            title={link.label}
           >
             <Button
               variant="neutral"
@@ -25,9 +26,9 @@ export function Contact() {
                 alt={link.label}
                 width={24}
                 height={24}
-                className="size-4 md:size-6"
+                className="size-6"
               />
-              {link.label}
+              <span className="hidden font-medium sm:block">{link.label}</span>
             </Button>
           </Link>
         ))}
