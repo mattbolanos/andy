@@ -403,9 +403,8 @@ export const interviewFeatures: Features[] = [
     publication: "Paste Magazine",
     features: [
       {
-        title:
-          "Could concert-based social media be the next big thing in live music?",
-        url: "https://www.pastemagazine.com/music/encore/could-concert-based-social-media-be-the-next-big-thing-in-live-music",
+        title: "Madonna Bought Me Drinks at Club Confessions",
+        url: "https://www.pastemagazine.com/music/madonna/madonna-bought-me-drinks-at-club-confessions",
       },
       {
         title: "The 20 greatest Charli XCX songs, ranked",
