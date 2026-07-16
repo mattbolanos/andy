@@ -7,10 +7,11 @@ export function InterviewGrid() {
   const publicationOrder = [
     { name: "The Ringer" },
     { name: "Paste Magazine", gridClass: "row-span-2" },
-    { name: "Northern Transmissions", gridClass: "row-span-2" },
+    { name: "The Needle Drop", gridClass: "row-span-2" },
     { name: "The Daily Beast" },
+    { name: "Northern Transmissions" },
     { name: "Under The Radar" },
-    { name: "The Needle Drop" },
+
     { name: "Chartmetric" },
   ];
 

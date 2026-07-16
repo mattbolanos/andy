@@ -16,7 +16,8 @@ type NavigationLink = {
 };
 
 type AlbumReview = {
-  imageUrl: string;
+  imageUrl?: string;
+  title?: string;
   href: Route;
 };
 
@@ -149,7 +150,22 @@ export const albumReviews: AlbumPublication[] = [
   {
     publication: "Paste Magazine",
     reviews: [
-      
+      {
+        href: "https://www.pastemagazine.com/music/nirosta-steel/nirosta-steel-my-skyscraper-album-review",
+        imageUrl: "nirosta-steel-my-skyscraper.jpeg",
+      },
+      {
+        href: "https://www.pastemagazine.com/music/robber-robber/robber-robber-two-wheels-move-the-soul-album-review",
+        imageUrl: "robber-robber-two-wheels-move-the-soul.jpeg",
+      },
+      {
+        href: "https://www.pastemagazine.com/music/underscores/underscores-u-album-review",
+        imageUrl: "underscores-u.jpeg",
+      },
+      {
+        imageUrl: "the-neighbourhood-ultrasound.jpeg",
+        href: "https://www.pastemagazine.com/music/the-neighbourhood/the-neighbourhood-work-against-themselves-on-ultrasound",
+      },
       {
         imageUrl: "brat-but-different.jpeg",
         href: "https://www.pastemagazine.com/music/charli-xcx/brat-and-its-completely-different-but-also-still-brat-charli-xcx-review",
@@ -387,6 +403,19 @@ export const interviewFeatures: Features[] = [
     publication: "Paste Magazine",
     features: [
       {
+        title:
+          "Could concert-based social media be the next big thing in live music?",
+        url: "https://www.pastemagazine.com/music/encore/could-concert-based-social-media-be-the-next-big-thing-in-live-music",
+      },
+      {
+        title: "The 20 greatest Charli XCX songs, ranked",
+        url: "https://www.pastemagazine.com/music/charli-xcx/the-greatest-charli-xcx-songs",
+      },
+      {
+        title: "Can anyone really soundtrack Wuthering Heights?",
+        url: "https://www.pastemagazine.com/music/genesis/wuthering-heights-soundtrack-genesis",
+      },
+      {
         title: "Wild Kinetic Dreams: Rush's Power Windows Turns 40",
         url: "https://www.pastemagazine.com/music/rush/rush-power-windows-turns-40",
       },
@@ -449,6 +478,18 @@ export const interviewFeatures: Features[] = [
     publication: "Northern Transmissions",
     features: [
       {
+        title: "Live Review: C2C Festival at Knockdown Center in Queens, NYC",
+        url: "https://northerntransmissions.com/live-review-c2c-festival-at-knockdown-center-in-queens-nyc/",
+      },
+      {
+        title: "Live Review: Snail Mail – Brooklyn Paramount",
+        url: "https://northerntransmissions.com/live-review-snail-mail-brooklyn-paramount/",
+      },
+      {
+        title: "Live Review: Sword Ⅱ at Baby's All Right Brooklyn, NY",
+        url: "https://northerntransmissions.com/live-review-sword-%E2%85%B1-at-babys-all-right-brooklyn-ny/",
+      },
+      {
         title: "Review of University @ TV Eye",
         url: "https://northerntransmissions.com/live-review-university-at-tv-eye-ridgewood-ny-october-30",
       },
@@ -473,6 +514,45 @@ export const interviewFeatures: Features[] = [
   {
     publication: "The Needle Drop",
     features: [
+      {
+        title: "Live Review: The Redemption of Kim Petras at LadyLand 2026",
+        url: "https://theneedledrop.com/live-review-the-redemption-of-kim-petras-at-ladyland-2026/",
+      },
+      {
+        title: "What you missed at Madonna's 'Confessions II' premiere",
+        url: "https://theneedledrop.com/news/what-you-missed-at-madonnas-confessions-ii-premiere/",
+      },
+      {
+        title:
+          "Everything that happened at Magdalena Bay's Imaginal Disk film premiere",
+        url: "https://theneedledrop.com/everything-that-happened-at-magdalena-bays-imaginal-disk-film-premiere/",
+      },
+      {
+        title: "The Biggest Takeaways From Coachella 2026",
+        url: "https://theneedledrop.com/the-biggest-takeaways-from-coachella-2026/",
+      },
+      {
+        title:
+          "“I’ve been getting such fatigue with perfectly mixed electronic pop music”: Slayyyter on teen angst, screaming, and pop tropes",
+        url: "https://theneedledrop.com/interviews/slayyyter-interview-march-2026/",
+      },
+      {
+        title:
+          "“My parachute is like Gaga's disco stick”: Gelli Haha on Lady Gaga, Hula Hoops, and trampoline choreo",
+        url: "https://theneedledrop.com/interviews/gelli-haha-interview-2026/",
+      },
+      {
+        title: "Concert Review: FKA twigs Body High Tour at MSG",
+        url: "https://theneedledrop.com/concert-review-fka-twigs-body-high-tour-at-msg/",
+      },
+      {
+        title: "Grace Ives on pink hair, opening for Robyn, and blowing up",
+        url: "https://theneedledrop.com/interviews/grace-ives-interview-2026/",
+      },
+      {
+        title: "INTERVIEW: Ratboys on repping Chicago, grief records, and AI",
+        url: "https://theneedledrop.com/interviews/interview-ratboys-on-repping-chicago-ai-chicago-and/",
+      },
       {
         title: "The Best and Worst of Coachella 2025",
         url: "https://theneedledrop.com/the-best-and-worst-of-coachella-2025",

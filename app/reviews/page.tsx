@@ -28,15 +28,27 @@ export default function Reviews() {
                   target="_blank"
                   prefetch
                   rel="noopener noreferrer"
+                  aria-label={review.title ?? review.imageUrl}
                   className="group hover:translate-x-reverseBoxShadowX hover:translate-y-reverseBoxShadowY col-span-1 transition-transform duration-250"
                 >
-                  <Image
-                    alt={review.imageUrl}
-                    src={`/albums/${review.imageUrl}`}
-                    width={140}
-                    height={140}
-                    className="border-border rounded-base group-hover:shadow-shadow aspect-square border-2 object-cover"
-                  />
+                  {review.imageUrl ? (
+                    <Image
+                      alt={review.title ?? review.imageUrl}
+                      src={`/albums/${review.imageUrl}`}
+                      width={140}
+                      height={140}
+                      className="border-border rounded-base group-hover:shadow-shadow aspect-square border-2 object-cover"
+                    />
+                  ) : (
+                    <div className="border-border bg-secondary-background rounded-base group-hover:shadow-shadow flex aspect-square min-h-0 flex-col items-center justify-center overflow-hidden border-2 p-2 text-center sm:p-3">
+                      <span className="text-muted-foreground text-[8px] tracking-[0.12em] uppercase sm:text-[10px]">
+                        Cover image coming soon
+                      </span>
+                      <span className="mt-2 line-clamp-3 max-w-full break-all text-[10px] leading-tight font-semibold sm:text-xs">
+                        {review.title}
+                      </span>
+                    </div>
+                  )}
                 </Link>
               ))}
             </div>
